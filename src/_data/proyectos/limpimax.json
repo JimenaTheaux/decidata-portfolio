@@ -1,0 +1,30 @@
+{
+  "titulo": "Limpimax",
+  "tag": "Fabricación · Sistema de pedidos · 2026",
+  "logo": "",
+  "mockup": "",
+  "descripcion": "Del WhatsApp al sistema. Pedidos, producción y reparto trazados en un solo flujo.",
+  "problema": "El flujo de un pedido pasaba por WhatsApp, cuaderno, comunicación verbal con producción, factura y reparto. La misma información se escribía tres o cuatro veces. Los errores eran frecuentes y la trazabilidad del pedido era nula.",
+  "quote": "Transcribimos la información muchas veces y no terminamos de registrar todo.",
+  "quoteAutor": "Miriam Cragnolini · Administradora, Limpimax",
+  "solucion": "App con roles diferenciados para admin y producción, más dashboard integrado.",
+  "funcionalidades": [
+    "Dashboard de ventas y pedidos",
+    "Registro de ventas",
+    "Base de clientes",
+    "Gestión de productos y precios",
+    "Factura automática al cargar la venta",
+    "Seguimiento: confirmado → en producción → listo → entregado"
+  ],
+  "resultados": [
+    "Todo el flujo de pedidos centralizado en un sistema",
+    "La información se carga una sola vez, sin reescribir",
+    "Mejor comunicación y trazabilidad con los clientes"
+  ],
+  "chips": ["Pedidos", "Roles", "Factura", "Reparto"],
+  "destacado": true,
+  "orden": 3,
+  "resena_texto": "Dejamos de anotar lo mismo varias veces. Ahora cargamos la información una sola vez y todo el proceso fluye mucho mejor.",
+  "resena_nombre": "Miriam Cragnolini",
+  "resena_rol": "Limpimax · Administradora"
+}
