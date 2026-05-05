@@ -309,6 +309,19 @@ function showHome() {
   setTimeout(() => document.getElementById('proyectos').scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
 }
 
+function initAnalytics() {
+  window.va = window.va || function() { (window.vaq = window.vaq || []).push(arguments); };
+  document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
+    el.addEventListener('click', () => va('event', { name: 'click_whatsapp' }));
+  });
+  document.querySelector('a[href="#proyectos"]')?.addEventListener('click', () => {
+    va('event', { name: 'click_ver_proyectos' });
+  });
+  document.getElementById('contactForm')?.addEventListener('submit', () => {
+    va('event', { name: 'form_submit_contacto' });
+  });
+}
+
 // Boot
 initNavbar();
 initDrawer();
@@ -319,3 +332,4 @@ initCounters();
 initSlider();
 initForm();
 initFloatingButton();
+initAnalytics();
