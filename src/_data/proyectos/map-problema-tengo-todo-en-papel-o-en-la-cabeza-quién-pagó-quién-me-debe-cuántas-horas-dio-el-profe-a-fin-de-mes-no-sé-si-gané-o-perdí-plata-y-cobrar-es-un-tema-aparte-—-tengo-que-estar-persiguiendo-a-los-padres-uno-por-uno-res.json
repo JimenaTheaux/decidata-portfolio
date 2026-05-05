@@ -1,0 +1,20 @@
+{
+  "problema": "\"Tengo todo en papel o en la cabeza: quién pagó, quién me debe, cuántas horas dio el profe. A fin de mes no sé si gané o perdí plata. Y cobrar es un tema aparte — tengo que estar persiguiendo a los padres uno por uno.\"",
+  "resultados": [
+    "01. La escuela pasó de gestionar todo en papel a tener control total desde el celular.02.El director sabe en tiempo real quién debe",
+    "cuánto ingresó y cómo están los profes.03.Cobrar dejó de ser un dolor de cabeza: se hace con un botón directo desde la app"
+  ],
+  "mockup": "/images/talleres_mockup.png",
+  "quoteAutor": "Administradora - Escuela talleres JM",
+  "destacado": false,
+  "solucion": "App de gestión interna con dashboard integrado",
+  "orden": 99,
+  "logo": "/images/whatsapp-image-2026-04-06-at-19.41.53.jpeg",
+  "descripcion": "De no saber quién debe la cuota del mes, a tener el listado y la integración a Whatsapp con un solo click! ",
+  "titulo": "Escuela de futbol Talleres JM",
+  "tag": "Futbol - Gestión interna",
+  "funcionalidades": [
+    "- Gestión de alumnos y asistencia. -Control de pagos y deudas. -Alertas automáticas de morosos. -Registro de horas de profesores. -Registro de venta de indumentaria. -Dashboard de ingresos y egresos. -Cobro directo por WhatsApp. -Informe mensual de datos (premium)"
+  ],
+  "quote": "\"Antes tardaba horas en saber quién me debía. Ahora lo veo en segundos.\""
+}
