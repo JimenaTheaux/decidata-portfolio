@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0D0D0D"/>
+
+  <!-- Subtle grid lines -->
+  <g stroke="#1a1a1a" stroke-width="1">
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+  </g>
+
+  <!-- Accent bar left -->
+  <rect x="80" y="200" width="4" height="230" fill="#469A96" rx="2"/>
+
+  <!-- Brand name -->
+  <text x="108" y="280" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="72" font-weight="600" fill="#FFFFFF" letter-spacing="-2">deci</text>
+  <text x="108" y="280" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="72" font-weight="600" fill="#469A96" letter-spacing="-2" dx="194">DATA</text>
+
+  <!-- Tagline -->
+  <text x="108" y="340" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="300" fill="#9A9A9A" letter-spacing="0">Datos que se convierten en decisiones</text>
+
+  <!-- Divider -->
+  <rect x="108" y="370" width="120" height="1" fill="#469A96" opacity="0.6"/>
+
+  <!-- Descriptor -->
+  <text x="108" y="408" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="16" fill="#469A96" letter-spacing="2">SISTEMAS · DASHBOARDS · PYMES · ARGENTINA</text>
+
+  <!-- Decorative accent circle -->
+  <circle cx="1060" cy="315" r="160" fill="none" stroke="#469A96" stroke-width="1" opacity="0.15"/>
+  <circle cx="1060" cy="315" r="100" fill="none" stroke="#469A96" stroke-width="1" opacity="0.2"/>
+
+  <!-- Small data bars (decorative) -->
+  <rect x="960" y="340" width="24" height="60" fill="#469A96" opacity="0.5" rx="2"/>
+  <rect x="992" y="310" width="24" height="90" fill="#469A96" opacity="0.7" rx="2"/>
+  <rect x="1024" y="290" width="24" height="110" fill="#469A96" opacity="0.9" rx="2"/>
+  <rect x="1056" y="320" width="24" height="80" fill="#469A96" opacity="0.6" rx="2"/>
+  <rect x="1088" y="300" width="24" height="100" fill="#469A96" opacity="0.8" rx="2"/>
+</svg>
