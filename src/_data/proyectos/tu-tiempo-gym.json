@@ -5,7 +5,7 @@
     "Registro y seguimiento de pagos sin papel",
     "Horas de profesoras calculadas sin planillas"
   ],
-  "mockup": "",
+  "mockup": "/images/tutiempogym-1-.png",
   "chips": [
     "Dashboard",
     "Pagos",
@@ -17,7 +17,7 @@
   "destacado": true,
   "solucion": "App web con dashboard integrado. Roles diferenciados para admin y profesoras.",
   "orden": 1,
-  "logo": "/images/tutiempogym-1-.png",
+  "logo": "/images/icon-512.png",
   "descripcion": "De las carpetas al dashboard. Pagos, alumnas, deudas y asistencia en un solo lugar.",
   "resena_nombre": "Mary Mendoza",
   "titulo": "Tu Tiempo Gym",
