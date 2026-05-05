@@ -5,7 +5,7 @@
     "Control claro del stock y los productos",
     "Registro diario sin múltiples pasos manuales"
   ],
-  "mockup": "",
+  "mockup": "/images/mockup-desktop.png",
   "chips": [
     "Stock",
     "Ventas",
@@ -17,7 +17,7 @@
   "destacado": true,
   "solucion": "App interna low cost con dashboard de análisis de ventas.",
   "orden": 2,
-  "logo": "/images/mockup-desktop.png",
+  "logo": "/images/logo-png.png",
   "descripcion": "Control de ventas, stock y egresos. El cierre de caja diario resuelto en minutos.",
   "resena_nombre": "Agustina Zaya",
   "titulo": "Vivero Francisca",
