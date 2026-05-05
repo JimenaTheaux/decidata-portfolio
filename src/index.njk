@@ -246,29 +246,46 @@ a{text-decoration:none;color:inherit}
 .solution-tag{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);color:var(--accent-dark);font-family:var(--font-mono);font-size:11px;padding:8px 16px;border-radius:6px}
 
 /* ABOUT */
-#acerca{padding:clamp(64px,10vw,120px) 0;background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:start}
-.about-h2{font-size:clamp(24px,3.5vw,38px);font-weight:600;letter-spacing:-.025em;line-height:1.2;margin-bottom:24px}
-.about-h2 em{color:var(--accent);font-style:italic;font-weight:300}
-.about-p{font-size:15px;color:var(--gray-600);line-height:1.8;font-weight:300;margin-bottom:16px}
-.about-props{margin-top:28px;display:flex;flex-direction:column;border:1px solid var(--gray-200);border-radius:10px;overflow:hidden;background:var(--white)}
-.prop-row{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;border-bottom:1px solid var(--gray-100);transition:background .2s}
-.prop-row:last-child{border-bottom:none}
-.prop-row:hover{background:var(--gray-50)}
-.prop-arrow{color:var(--accent);font-family:var(--font-mono);font-size:13px;flex-shrink:0;margin-top:1px}
-.prop-text{font-size:14px;color:var(--black);line-height:1.5}
-.prop-text strong{font-weight:500}
-.prop-text span{color:var(--gray-600);font-weight:300}
-.about-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden}
-.about-card-top{background:var(--gray-50);border-bottom:1px solid var(--gray-200);padding:32px 28px;display:flex;align-items:center;gap:20px}
-.about-avatar{width:64px;height:64px;border-radius:12px;background:var(--accent-light);border:1px solid rgba(70,154,150,.2);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:20px;color:var(--accent);flex-shrink:0;overflow:hidden}
-.about-avatar img{width:100%;height:100%;object-fit:cover}
-.about-name{font-size:17px;font-weight:600;margin-bottom:3px}
-.about-role{font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase}
-.about-card-body{padding:24px 28px}
-.about-card-text{font-size:14px;color:var(--gray-600);line-height:1.75;font-weight:300;margin-bottom:20px}
-.about-tags{display:flex;flex-wrap:wrap;gap:7px}
-.about-tag{font-family:var(--font-mono);font-size:10px;color:var(--gray-600);border:1px solid var(--gray-200);padding:5px 12px;border-radius:4px;background:var(--gray-50)}
+.acerca{padding:clamp(64px,10vw,120px) 0;background:#0f172a}
+.acerca .section-label{color:rgba(255,255,255,.4)}
+.acerca .section-label::before{background:rgba(255,255,255,.25)}
+.acerca__grid{display:grid;grid-template-columns:2fr 3fr;gap:clamp(48px,8vw,96px);align-items:center;max-width:var(--max-w);margin:0 auto;padding:0 var(--px)}
+.acerca__foto img{width:100%;border-radius:20px;border:1px solid rgba(70,154,150,.2);box-shadow:0 0 40px rgba(70,154,150,.08);display:block}
+.acerca__contenido h2{font-size:clamp(26px,4vw,40px);font-weight:600;line-height:1.15;letter-spacing:-.025em;color:#fff;margin-bottom:24px}
+.acerca__contenido h2 em{font-style:italic;color:var(--accent)}
+.acerca__bio{font-size:15px;color:rgba(255,255,255,.65);line-height:1.8;font-weight:300;margin-bottom:12px}
+.acerca__bio--secondary{color:rgba(255,255,255,.45);font-size:14px}
+.acerca__skills{display:flex;flex-wrap:wrap;margin:20px 0}
+.skill-pill{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:6px 16px;font-size:.85rem;color:rgba(255,255,255,.8);margin:4px;background:rgba(255,255,255,.05)}
+.acerca__propuesta{margin:20px 0}
+.propuesta-item{display:flex;align-items:baseline;padding:10px 14px;border-radius:8px;font-size:14px;color:rgba(255,255,255,.7);transition:background 150ms;line-height:1.5}
+.propuesta-item:hover{background:rgba(255,255,255,.04)}
+.propuesta-arrow{color:var(--accent);font-weight:700;margin-right:10px;flex-shrink:0}
+.propuesta-item strong{color:#fff;font-weight:600;margin-right:4px}
+.acerca__firma{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:4px}
+.acerca__firma strong{color:#fff;font-size:15px;font-weight:600}
+.acerca__firma span{font-size:13px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+@media(max-width:768px){.acerca__grid{grid-template-columns:1fr;gap:40px}}
+@media(max-width:600px){.acerca__foto{display:none}}
+
+/* PROCESO */
+.proceso{padding:clamp(64px,10vw,120px) 0;background:#111827}
+.proceso .section-label{color:rgba(255,255,255,.4)}
+.proceso .section-label::before{background:rgba(255,255,255,.25)}
+.proceso__header{text-align:center;margin-bottom:clamp(40px,6vw,56px)}
+.proceso__header h2{font-size:clamp(26px,4vw,40px);font-weight:600;line-height:1.15;letter-spacing:-.025em;color:#fff;margin-top:8px}
+.proceso__timeline{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:center}
+.proceso__conector{border-top:2px dashed rgba(70,154,150,.3);align-self:center;min-width:16px;margin:0 8px}
+.proceso__paso{text-align:center;padding:24px 16px;background:rgba(30,41,59,.5);border:1px solid rgba(255,255,255,.08);border-radius:16px;opacity:0;transform:translateY(24px);transition:opacity 500ms ease,transform 500ms ease}
+.proceso__paso.visible{opacity:1;transform:none}
+.paso__numero{width:36px;height:36px;background:var(--accent);color:#0f172a;font-weight:800;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:14px;font-family:var(--font-mono)}
+.paso__icono{font-size:2rem;margin-bottom:12px;line-height:1}
+.proceso__paso h3{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px}
+.proceso__paso p{font-size:.875rem;color:rgba(255,255,255,.6);line-height:1.6}
+@media(max-width:768px){
+  .proceso__timeline{grid-template-columns:1fr;gap:16px}
+  .proceso__conector{display:none}
+}
 
 /* TESTIMONIALS */
 #valoraciones{padding:clamp(64px,10vw,120px) 0;overflow:hidden}
@@ -318,12 +335,6 @@ footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;
 @media(max-width:900px){
   .nav-links{display:none}.hamburger{display:flex}.nav-cta{display:none}
   .hero-grid{grid-template-columns:1fr}.hero__dashboard{margin-top:8px}
-  .mockup-wrap{max-width:360px;margin:0 auto}
-  .stats-inner{grid-template-columns:repeat(2,1fr)}
-  .stat-item:nth-child(2){border-right:none}
-  .stat-item:nth-child(3){border-right:1px solid var(--gray-200);border-top:1px solid var(--gray-200)}
-  .stat-item:nth-child(4){border-top:1px solid var(--gray-200)}
-  .about-grid{grid-template-columns:1fr;gap:40px}
   .results-grid{grid-template-columns:1fr}
   .features-grid{grid-template-columns:1fr 1fr}
 }
@@ -331,13 +342,8 @@ footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;
   :root{--px:18px}
   .features-grid{grid-template-columns:1fr}
   .cta-box{padding:36px 24px;border-radius:14px}
-  .mockup-mobile{display:none}
   footer{flex-direction:column;align-items:flex-start}
-  .about-card-top{padding:22px 18px}
-  .about-card-body{padding:18px 18px}
-  .stat-num{word-break:break-word;font-size:clamp(22px,7vw,30px)}
   .test-card{width:280px}
-  .hero-actions{gap:14px}
 }
 
 /* ── HERO BI SCENE ── */
@@ -626,36 +632,71 @@ footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;
     </div>
   </section>
 
-  <section id="acerca">
-    <div class="container">
-      <div class="about-grid">
-        <div class="reveal">
-          <div class="section-label">{{ general.acerca_label }}</div>
-          <h2 class="about-h2">{{ general.acerca_h2_p1 }}<br>{{ general.acerca_h2_p2 }}<br><em>{{ general.acerca_h2_em }}</em></h2>
-          <p class="about-p">{{ general.bio1 }}</p>
-          <p class="about-p">{{ general.bio2 }}</p>
+  <section id="acerca" class="acerca">
+    <div class="acerca__grid">
+      <div class="acerca__foto reveal">
+        <img src="/images/diseño-sin-título-4-.png"
+             alt="Jimena Theaux, fundadora de deciDATA"
+             width="400" height="480" loading="lazy">
+      </div>
+      <div class="acerca__contenido reveal">
+        <div class="section-label">Sobre deciDATA</div>
+        <h2>Sistemas hechos para tu negocio.<br><em>No templates genéricos.</em></h2>
+        <p class="acerca__bio">Analista de datos con foco en pymes e instituciones. Combino análisis de datos, diseño de sistemas y acompañamiento cercano para que cada solución encaje exactamente con la realidad del negocio.</p>
+        <p class="acerca__bio acerca__bio--secondary">Trabajo directo con el cliente desde el diagnóstico hasta la entrega. Sin intermediarios.</p>
+        <div class="acerca__skills">
+          <span class="skill-pill">📊 Análisis de datos</span>
+          <span class="skill-pill">⚙️ Diseño de sistemas</span>
+          <span class="skill-pill">🤝 Sin intermediarios</span>
+          <span class="skill-pill">⚡ 10–20 días</span>
         </div>
-        <div class="reveal">
-          <div class="about-card">
-            <div class="about-card-top">
-              <div class="about-avatar">
-                {%- if general.foto_perfil %}
-                <img src="{{ general.foto_perfil }}" alt="{{ general.nombre }}, {{ general.rol }} — deciDATA" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;">
-                {%- else %}JT{%- endif %}
-              </div>
-              <div>
-                <div class="about-name">{{ general.nombre }}</div>
-                <div class="about-role">{{ general.rol }}</div>
-              </div>
-            </div>
-            <div class="about-card-body">
-              <p class="about-card-text">{{ general.card_bio1 }}</p>
-              <p class="about-card-text">{{ general.card_bio2 }}</p>
-              <div class="about-tags">
-                {%- for tag in general.about_tags %}<span class="about-tag">{{ tag }}</span>{%- endfor %}
-              </div>
-            </div>
-          </div>
+        <div class="acerca__propuesta">
+          <div class="propuesta-item"><span class="propuesta-arrow">→</span><strong>No tenés sistema</strong> → lo creamos desde cero</div>
+          <div class="propuesta-item"><span class="propuesta-arrow">→</span><strong>Tenés datos</strong> → los hacemos útiles</div>
+          <div class="propuesta-item"><span class="propuesta-arrow">→</span><strong>Repetís tareas</strong> → las automatizamos</div>
+          <div class="propuesta-item"><span class="propuesta-arrow">→</span><strong>Tu negocio es único</strong> → la solución también</div>
+        </div>
+        <div class="acerca__firma">
+          <strong>Jimena Theaux</strong>
+          <span>Fundadora · deciDATA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proceso">
+    <div class="container">
+      <div class="proceso__header reveal">
+        <div class="section-label">Cómo trabajo</div>
+        <h2>Un proceso claro<br>de principio a fin.</h2>
+      </div>
+      <div class="proceso__timeline">
+        <div class="proceso__paso" data-step="1">
+          <div class="paso__numero">1</div>
+          <div class="paso__icono">🔍</div>
+          <h3>Diagnóstico</h3>
+          <p>Una reunión para entender tu negocio, qué información manejás y qué necesitás resolver.</p>
+        </div>
+        <div class="proceso__conector" aria-hidden="true"></div>
+        <div class="proceso__paso" data-step="2">
+          <div class="paso__numero">2</div>
+          <div class="paso__icono">🗺️</div>
+          <h3>Propuesta</h3>
+          <p>Te presento la solución diseñada específicamente para tu caso. Sin templates, sin relleno.</p>
+        </div>
+        <div class="proceso__conector" aria-hidden="true"></div>
+        <div class="proceso__paso" data-step="3">
+          <div class="paso__numero">3</div>
+          <div class="paso__icono">⚙️</div>
+          <h3>Desarrollo</h3>
+          <p>Construyo el sistema con actualizaciones durante el proceso para que veas el avance.</p>
+        </div>
+        <div class="proceso__conector" aria-hidden="true"></div>
+        <div class="proceso__paso" data-step="4">
+          <div class="paso__numero">4</div>
+          <div class="paso__icono">🚀</div>
+          <h3>Entrega + Soporte</h3>
+          <p>Te entrego el sistema funcionando y te acompaño en la implementación.</p>
         </div>
       </div>
     </div>
@@ -810,6 +851,21 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach((e,i) => { if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);obs.unobserve(e.target);}});
 },{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Proceso — stagger reveal
+const procesoTimeline = document.querySelector('.proceso__timeline');
+if (procesoTimeline) {
+  const procesoObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      procesoObs.unobserve(entry.target);
+      entry.target.querySelectorAll('.proceso__paso').forEach((paso, i) => {
+        setTimeout(() => paso.classList.add('visible'), i * 150);
+      });
+    });
+  }, { threshold: 0.2 });
+  procesoObs.observe(procesoTimeline);
+}
 
 // Project filters
 document.querySelectorAll('.filtro').forEach(btn => {
