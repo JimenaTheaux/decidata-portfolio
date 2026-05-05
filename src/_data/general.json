@@ -1,9 +1,10 @@
 {
-  "stat1_num": "7+",
+  "stat1_num": "+7",
   "stat2_num": "10–20días",
-  "stat3_num": "15",
+  "stat3_num": "+15",
+  "foto_perfil": "/images/diseño-sin-título-4-.png",
   "stat4_num": "100%",
-  "bio1": "Trabajo con emprendimientos y pymes que manejan información todos los días, pero no tienen un sistema claro para registrarla, ordenarla y usarla. Eso genera pérdida de tiempo, errores y decisiones a ojo.",
+  "bio1": "Trabajo con pymes, instituciones y organizaciones que manejan información todos los días, pero no tienen un sistema claro para registrarla, ordenarla y usarla. ",
   "hero_linea1": "Datos que se convierten en",
   "nombre": "Jimena Theaux",
   "bio2": "Diseño soluciones simples y adaptadas a cada negocio para centralizar la información, automatizar tareas y tener una visión clara de lo que está pasando, sin complicaciones ni herramientas innecesarias.",
@@ -15,6 +16,5 @@
   "hero_parrafo": "Te ayudo a transformar información desordenada en una herramienta clara para ordenar tu negocio, ahorrar tiempo y tomar mejores decisiones.",
   "stat3_label": "personas confiando en nosotros",
   "stat4_label": "Personalizado",
-  "whatsapp_display": "3525-529966",
-  "foto_perfil": ""
+  "whatsapp_display": "3525-529966"
 }
