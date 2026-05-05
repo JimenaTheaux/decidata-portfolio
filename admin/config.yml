@@ -47,6 +47,11 @@ collections:
           - { label: "WhatsApp para mostrar", name: "whatsapp_display", widget: "string", hint: "Ej: 3525-529966" }
           - { label: "Tu nombre", name: "nombre", widget: "string" }
           - { label: "Tu rol", name: "rol", widget: "string" }
+          - label: "Foto de perfil"
+            name: "foto_perfil"
+            widget: "image"
+            required: false
+            hint: "Foto tuya para la sección Sobre mí. Recomendado: cuadrada, mínimo 400x400px."
           - { label: "Bio párrafo 1", name: "bio1", widget: "text" }
           - { label: "Bio párrafo 2", name: "bio2", widget: "text" }
           - { label: "Stat 1 — número", name: "stat1_num", widget: "string" }
