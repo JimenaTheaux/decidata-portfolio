@@ -1,13 +1,28 @@
 {
+  "problema": "El equipo solo anotaba lo que entraba, y les costaba registrar también los egresos. El cierre diario requería filtrar manualmente por tipo de ingreso. No tenían control del stock y no podían saber qué producto salía más ni cuándo había más movimiento.",
+  "resultados": [
+    "El cierre de caja se volvió más simple y ordenado",
+    "Control claro del stock y los productos",
+    "Registro diario sin múltiples pasos manuales"
+  ],
+  "mockup": "",
+  "chips": [
+    "Stock",
+    "Ventas",
+    "Egresos",
+    "Alertas"
+  ],
+  "quoteAutor": "Equipo Vivero Francisca",
+  "resena_rol": "Vivero Francisca · Empleada",
+  "destacado": true,
+  "solucion": "App interna low cost con dashboard de análisis de ventas.",
+  "orden": 2,
+  "logo": "/images/mockup-desktop.png",
+  "descripcion": "Control de ventas, stock y egresos. El cierre de caja diario resuelto en minutos.",
+  "resena_nombre": "Agustina Zaya",
   "titulo": "Vivero Francisca",
   "tag": "Vivero · App + Dashboard · 2026",
-  "logo": "",
-  "mockup": "",
-  "descripcion": "Control de ventas, stock y egresos. El cierre de caja diario resuelto en minutos.",
-  "problema": "El equipo solo anotaba lo que entraba, y les costaba registrar también los egresos. El cierre diario requería filtrar manualmente por tipo de ingreso. No tenían control del stock y no podían saber qué producto salía más ni cuándo había más movimiento.",
-  "quote": "Nos lleva mucho tiempo el cierre de caja.",
-  "quoteAutor": "Equipo Vivero Francisca",
-  "solucion": "App interna low cost con dashboard de análisis de ventas.",
+  "resena_texto": "Antes nos llevaba mucho tiempo cerrar la caja y ordenar la información. Ahora tenemos todo más claro y organizado, y el trabajo del día a día es mucho más simple.",
   "funcionalidades": [
     "Dashboard con métricas del vivero",
     "Registro de ventas diarias",
@@ -16,15 +31,5 @@
     "Registro de egresos y gastos",
     "Registro de proveedores"
   ],
-  "resultados": [
-    "El cierre de caja se volvió más simple y ordenado",
-    "Control claro del stock y los productos",
-    "Registro diario sin múltiples pasos manuales"
-  ],
-  "chips": ["Stock", "Ventas", "Egresos", "Alertas"],
-  "destacado": true,
-  "orden": 2,
-  "resena_texto": "Antes nos llevaba mucho tiempo cerrar la caja y ordenar la información. Ahora tenemos todo más claro y organizado, y el trabajo del día a día es mucho más simple.",
-  "resena_nombre": "Agustina Zaya",
-  "resena_rol": "Vivero Francisca · Empleada"
+  "quote": "Nos lleva mucho tiempo el cierre de caja."
 }
