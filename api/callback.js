@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const { code } = req.query;
 
   if (!code) {
@@ -26,12 +26,9 @@ export default async function handler(req, res) {
   } catch (err) {
     res.send(closeWith('error', { message: err.message }));
   }
-}
+};
 
 function closeWith(status, payload) {
-  const msg = JSON.stringify(`authorization:github:${status}:${JSON.stringify(payload)}`);
-  return `<!doctype html><html><body><script>
-    window.opener.postMessage(${msg}, '*');
-    window.close();
-  </script></body></html>`;
+  const msg = JSON.stringify('authorization:github:' + status + ':' + JSON.stringify(payload));
+  return '<!doctype html><html><body><script>window.opener.postMessage(' + msg + ', \'*\');window.close();<\/script></body></html>';
 }
