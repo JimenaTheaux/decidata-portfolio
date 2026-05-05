@@ -351,5 +351,11 @@ const obs = new IntersectionObserver(entries => {
 }, {threshold: .08});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
+
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
