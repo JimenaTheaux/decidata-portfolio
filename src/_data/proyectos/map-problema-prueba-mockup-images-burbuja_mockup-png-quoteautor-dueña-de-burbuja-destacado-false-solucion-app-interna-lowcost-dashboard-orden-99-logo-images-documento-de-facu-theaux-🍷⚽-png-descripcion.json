@@ -1,13 +1,32 @@
 {
-  "problema": "PRUEBA",
+  "problema": "Vendemos todos los días, pero anotamos los pedidos en papel, en notitas o en Excel incompleto. Después cuesta juntar toda esa información y no terminamos de tener claro cuánto vendimos realmente ni cómo viene el negocio.",
+  "resultados": [
+    "Toda la información pasó a estar centralizada",
+    "Se simplificó el registro diario de ventas",
+    "Se logró tener claridad sobre el funcionamiento del negocio"
+  ],
   "mockup": "/images/burbuja_mockup.png",
+  "chips": [
+    "Registro completo",
+    "App interna"
+  ],
   "quoteAutor": "Dueña de BURBUJA",
+  "resena_rol": "Dueños de Burbuja",
   "destacado": false,
   "solucion": "App interna (lowcost) + dashboard ",
   "orden": 99,
   "logo": "/images/documento-de-facu-theaux-🍷⚽.png",
   "descripcion": "De registros incompletos en Whatsapp y Excel a medio terminar, a centralizar todas las ventas en una app interna funcional",
+  "resena_nombre": "Facundo y Belen",
   "titulo": "Burbuja - Limpieza superpoderosa",
   "tag": "Venta productos de limpieza",
-  "quote": "prueba"
+  "resena_texto": "Lo que más cambió fue el tiempo. Dejamos de perder horas ordenando información y ahora nos enfocamos en vender y producir.",
+  "funcionalidades": [
+    "Registro de ventas desde el celular",
+    "Registro de clientes",
+    "Manejo de productos y precios",
+    "Dashboard con métricas claves",
+    "Cálculos automáticos"
+  ],
+  "quote": "Vendemos, pero no tenemos claro cuánto ni cómo"
 }
