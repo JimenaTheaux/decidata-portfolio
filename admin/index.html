@@ -4,8 +4,83 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>deciDATA Admin</title>
+  <script>window.CMS_MANUAL_INIT = true;</script>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'JimenaTheaux/decidata-portfolio',
+          branch: 'main'
+        },
+        media_folder: 'images',
+        public_folder: '/images',
+        collections: [
+          {
+            name: 'proyectos',
+            label: 'Proyectos',
+            folder: 'src/_data/proyectos',
+            create: true,
+            format: 'json',
+            slug: '{{slug}}',
+            fields: [
+              { label: 'Nombre del cliente', name: 'titulo', widget: 'string' },
+              { label: 'Rubro / Etiqueta', name: 'tag', widget: 'string', hint: 'Ej: Gimnasio · Sistema de gestión · 2026' },
+              { label: 'Logo del cliente', name: 'logo', widget: 'image', required: false },
+              { label: 'Foto mockup del sistema', name: 'mockup', widget: 'image', required: false },
+              { label: 'Descripción corta (card)', name: 'descripcion', widget: 'text' },
+              { label: 'El dolor del cliente', name: 'problema', widget: 'text' },
+              { label: 'Quote del cliente', name: 'quote', widget: 'string' },
+              { label: 'Autor del quote', name: 'quoteAutor', widget: 'string' },
+              { label: 'Solución implementada', name: 'solucion', widget: 'string' },
+              { label: 'Funcionalidades', name: 'funcionalidades', widget: 'list' },
+              { label: 'Resultados', name: 'resultados', widget: 'list' },
+              { label: 'Chips del card', name: 'chips', widget: 'list' },
+              { label: 'Reseña — texto', name: 'resena_texto', widget: 'text', required: false },
+              { label: 'Reseña — nombre', name: 'resena_nombre', widget: 'string', required: false },
+              { label: 'Reseña — rol', name: 'resena_rol', widget: 'string', required: false },
+              { label: 'Destacado en home', name: 'destacado', widget: 'boolean', default: false },
+              { label: 'Orden en home', name: 'orden', widget: 'number', default: 99, required: false }
+            ]
+          },
+          {
+            name: 'configuracion',
+            label: 'Configuración del sitio',
+            files: [
+              {
+                label: 'Textos generales',
+                name: 'general',
+                file: 'src/_data/general.json',
+                format: 'json',
+                fields: [
+                  { label: 'Hero — línea 1', name: 'hero_linea1', widget: 'string' },
+                  { label: 'Hero — línea 2 (acento)', name: 'hero_linea2', widget: 'string' },
+                  { label: 'Hero — párrafo', name: 'hero_parrafo', widget: 'text' },
+                  { label: 'WhatsApp (con código país, sin +)', name: 'whatsapp', widget: 'string' },
+                  { label: 'WhatsApp para mostrar', name: 'whatsapp_display', widget: 'string' },
+                  { label: 'Nombre', name: 'nombre', widget: 'string' },
+                  { label: 'Rol', name: 'rol', widget: 'string' },
+                  { label: 'Foto de perfil', name: 'foto_perfil', widget: 'image', required: false },
+                  { label: 'Bio párrafo 1', name: 'bio1', widget: 'text' },
+                  { label: 'Bio párrafo 2', name: 'bio2', widget: 'text' },
+                  { label: 'Stat 1 número', name: 'stat1_num', widget: 'string' },
+                  { label: 'Stat 1 etiqueta', name: 'stat1_label', widget: 'string' },
+                  { label: 'Stat 2 número', name: 'stat2_num', widget: 'string' },
+                  { label: 'Stat 2 etiqueta', name: 'stat2_label', widget: 'string' },
+                  { label: 'Stat 3 número', name: 'stat3_num', widget: 'string' },
+                  { label: 'Stat 3 etiqueta', name: 'stat3_label', widget: 'string' },
+                  { label: 'Stat 4 número', name: 'stat4_num', widget: 'string' },
+                  { label: 'Stat 4 etiqueta', name: 'stat4_label', widget: 'string' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
