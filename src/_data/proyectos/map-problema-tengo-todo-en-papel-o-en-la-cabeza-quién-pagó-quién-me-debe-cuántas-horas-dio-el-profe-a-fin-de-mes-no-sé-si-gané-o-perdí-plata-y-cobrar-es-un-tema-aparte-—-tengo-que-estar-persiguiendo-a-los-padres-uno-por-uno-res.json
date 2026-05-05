@@ -1,5 +1,5 @@
 {
-  "problema": "\"Tengo todo en papel o en la cabeza: quién pagó, quién me debe, cuántas horas dio el profe. A fin de mes no sé si gané o perdí plata. Y cobrar es un tema aparte — tengo que estar persiguiendo a los padres uno por uno.\"",
+  "problema": "Tengo todo en papel o en la cabeza: quién pagó, quién me debe, cuántas horas dio el profe. A fin de mes no sé si gané o perdí plata. Y cobrar es un tema aparte — tengo que estar persiguiendo a los padres uno por uno.",
   "resultados": [
     "La escuela pasó de gestionar todo en papel a tener control total desde el celular",
     "El director sabe en tiempo real quién debe, cuánto ingresó y cómo están los profes",
@@ -12,13 +12,16 @@
     "Alerta deudores"
   ],
   "quoteAutor": "Administradora - Escuela talleres JM",
+  "resena_rol": "Administradora",
   "destacado": false,
   "solucion": "App de gestión interna con dashboard integrado",
   "orden": 99,
   "logo": "/images/whatsapp-image-2026-04-06-at-19.41.53.jpeg",
   "descripcion": "De no saber quién debe la cuota del mes, a tener el listado y la integración a Whatsapp con un solo click! ",
+  "resena_nombre": "Analía Carina",
   "titulo": "Escuela de futbol Talleres JM",
   "tag": "Futbol - Gestión interna",
+  "resena_texto": "Lo que más me cambió el día a día es ver quién me debe apenas abro la app. Antes tenía que revisar anotaciones, preguntar, cruzar datos. Ahora entro al dashboard y está todo ahí",
   "funcionalidades": [
     "Gestión de alumnos y asistencia",
     "Registro de horas de profesores",
@@ -27,5 +30,5 @@
     "Alertas automáticas de morosos",
     "Dashboard con indicadores claves"
   ],
-  "quote": "\"Antes tardaba horas en saber quién me debía. Ahora lo veo en segundos.\""
+  "quote": "Antes tardaba horas en saber quién me debía. Ahora lo veo en segundos."
 }
