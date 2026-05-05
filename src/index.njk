@@ -55,7 +55,7 @@ a{text-decoration:none;color:inherit}
 .hero-h1{font-size:clamp(32px,5.5vw,58px);font-weight:600;line-height:1.08;letter-spacing:-.03em;margin-bottom:24px}
 .hero-h1 .accent-word{color:var(--accent);font-weight:300;font-style:italic}
 .hero-p{font-size:clamp(15px,2vw,17px);color:var(--gray-600);line-height:1.75;max-width:480px;margin-bottom:36px;font-weight:300}
-.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:36px}
 .btn-primary{display:inline-flex;align-items:center;gap:7px;background:var(--black);color:var(--white);font-size:14px;font-weight:500;padding:13px 26px;border-radius:6px;transition:background .2s,transform .2s;white-space:nowrap}
 .btn-primary:hover{background:#222;transform:translateY(-1px)}
 .btn-primary .arr{color:var(--accent)}
@@ -63,36 +63,44 @@ a{text-decoration:none;color:inherit}
 .btn-ghost:hover{color:var(--black);border-color:var(--black)}
 
 /* Hero mockup */
-.hero-right{position:relative;display:flex;justify-content:center;align-items:flex-start}
-.mockup-wrap{position:relative;width:100%;max-width:480px}
-.mockup-desktop{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:12px;padding:14px 14px 22px;box-shadow:0 8px 40px rgba(0,0,0,.08)}
-.mockup-topbar{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+.hero-right{position:relative;display:flex;justify-content:center;align-items:flex-start;padding-top:8px}
+.mockup-wrap{position:relative;width:100%;max-width:500px}
+.mockup-desktop{background:#0D1117;border:1px solid #1E2535;border-radius:14px;padding:12px;box-shadow:0 24px 64px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.04)}
+.mockup-topbar{display:flex;align-items:center;gap:5px;margin-bottom:10px;padding:0 2px}
 .topbar-dot{width:8px;height:8px;border-radius:50%}
-.mockup-screen{background:var(--white);border:1px solid var(--gray-200);border-radius:8px;padding:16px}
-.screen-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.screen-title{font-family:var(--font-mono);font-size:11px;color:var(--black)}
-.screen-badge{font-family:var(--font-mono);font-size:9px;color:var(--gray-600);background:var(--gray-100);padding:3px 8px;border-radius:4px}
-.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
-.kpi-card{background:var(--gray-50);border-radius:6px;padding:10px;border:1px solid var(--gray-200)}
-.kpi-label{font-family:var(--font-mono);font-size:8px;color:var(--gray-600);margin-bottom:4px}
-.kpi-val{font-family:var(--font-mono);font-size:13px;color:var(--black)}
-.kpi-val.pos{color:var(--accent)}.kpi-val.neg{color:#C0392B}
-.chart-block{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:6px;padding:10px;margin-bottom:10px}
-.chart-lbl{font-family:var(--font-mono);font-size:8px;color:var(--gray-600);margin-bottom:8px}
-.bars{display:flex;align-items:flex-end;gap:5px;height:44px}
-.bar{flex:1;border-radius:3px 3px 0 0;background:var(--gray-200)}
-.bar.active{background:var(--accent)}
-.alert-strip{background:#FFFBEC;border-left:3px solid #F0C040;border-radius:0 5px 5px 0;padding:7px 10px;font-family:var(--font-mono);font-size:9px;color:#7A5F00}
-.mockup-mobile{position:absolute;bottom:-24px;right:-20px;width:90px;background:#111;border-radius:16px;padding:8px 5px 10px;box-shadow:0 12px 40px rgba(0,0,0,.18);border:1.5px solid #222}
-.mobile-notch{width:24px;height:4px;background:#222;border-radius:3px;margin:0 auto 6px}
-.mobile-screen{background:var(--white);border-radius:8px;padding:8px 6px}
-.mobile-lbl{font-family:var(--font-mono);font-size:6.5px;color:var(--gray-600);margin-bottom:6px}
-.mobile-row{display:flex;align-items:center;justify-content:space-between;padding:4px 0;border-bottom:.5px solid var(--gray-100)}
-.mobile-row:last-child{border-bottom:none}
-.mobile-name{font-size:7px;color:var(--black)}
-.mobile-tag{font-size:6px;font-family:var(--font-mono);padding:2px 5px;border-radius:3px}
-.tag-paid{background:var(--accent-light);color:var(--accent-dark)}
-.tag-due{background:#FEECEC;color:#A82020}
+.mockup-body{display:flex;gap:9px;height:230px}
+.mockup-sidebar{width:30px;background:#161C2A;border-radius:8px;display:flex;flex-direction:column;align-items:center;padding:12px 0;gap:10px;flex-shrink:0}
+.sb-icon{width:14px;height:14px;border-radius:4px;background:#1E2840;display:flex;align-items:center;justify-content:center}
+.sb-icon.active{background:rgba(70,154,150,.25)}
+.sb-dot{width:6px;height:6px;border-radius:50%;background:#2A3550}
+.sb-dot.active{background:var(--accent)}
+.mockup-main{flex:1;display:flex;flex-direction:column;gap:8px;min-width:0}
+.mock-header{display:flex;align-items:center;justify-content:space-between}
+.mock-title{font-family:var(--font-mono);font-size:9px;color:#6B7694;letter-spacing:.04em}
+.mock-badge{font-family:var(--font-mono);font-size:7px;color:#469A96;background:rgba(70,154,150,.12);padding:2px 8px;border-radius:4px;border:1px solid rgba(70,154,150,.2)}
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.kpi-card{background:#161C2A;border-radius:7px;padding:8px 9px;border:1px solid #1E2535}
+.kpi-label{font-family:var(--font-mono);font-size:7px;color:#4A566E;margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em}
+.kpi-val{font-family:var(--font-mono);font-size:15px;color:#D8E1F5;font-weight:700;letter-spacing:-.02em}
+.kpi-val.pos{color:#34D399}
+.kpi-val.neg{color:#F87171}
+.kpi-delta{font-family:var(--font-mono);font-size:6px;color:#4A566E;margin-top:2px}
+.kpi-delta.up{color:#34D399}
+.chart-block{background:#161C2A;border-radius:7px;padding:10px;flex:1;border:1px solid #1E2535;display:flex;flex-direction:column}
+.chart-lbl{font-family:var(--font-mono);font-size:7px;color:#4A566E;margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
+.chart-svg{width:100%;flex:1}
+.mockup-mobile{position:absolute;bottom:-28px;right:-22px;width:96px;background:#090D15;border-radius:18px;overflow:hidden;box-shadow:0 18px 52px rgba(0,0,0,.42);border:1.5px solid #1E2535}
+.mobile-pill{width:22px;height:3px;background:#1A2238;border-radius:3px;margin:6px auto 4px}
+.mobile-screen{background:#0D1420;padding:7px 7px 10px}
+.mobile-app-title{font-family:var(--font-mono);font-size:6px;color:#4A566E;margin-bottom:5px;letter-spacing:.08em;text-transform:uppercase}
+.mobile-card{background:#161C2A;border-radius:5px;padding:5px 7px;margin-bottom:3px;display:flex;align-items:center;justify-content:space-between;border:1px solid #1E2535}
+.mobile-name{font-size:6.5px;color:#C4CDE0}
+.mobile-tag{font-size:5.5px;font-family:var(--font-mono);padding:1.5px 5px;border-radius:3px}
+.tag-paid{background:rgba(52,211,153,.12);color:#34D399}
+.tag-due{background:rgba(248,113,113,.1);color:#F87171}
+.mobile-total{display:flex;justify-content:space-between;align-items:center;padding:5px 7px;background:#111827;border-radius:5px;margin-top:4px}
+.mobile-total-lbl{font-family:var(--font-mono);font-size:5.5px;color:#4A566E}
+.mobile-total-val{font-family:var(--font-mono);font-size:5.5px;color:#34D399;font-weight:600}
 
 /* STATS */
 #stats{background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
@@ -313,39 +321,65 @@ footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;
                 <div class="topbar-dot" style="background:#febc2e"></div>
                 <div class="topbar-dot" style="background:#28c840"></div>
               </div>
-              <div class="mockup-screen">
-                <div class="screen-header">
-                  <span class="screen-title">Dashboard — 2026</span>
-                  <span class="screen-badge">Admin</span>
+              <div class="mockup-body">
+                <div class="mockup-sidebar">
+                  <div class="sb-icon active"><div class="sb-dot active"></div></div>
+                  <div class="sb-icon"><div class="sb-dot"></div></div>
+                  <div class="sb-icon"><div class="sb-dot"></div></div>
+                  <div class="sb-icon"><div class="sb-dot"></div></div>
                 </div>
-                <div class="kpi-row">
-                  <div class="kpi-card"><div class="kpi-label">Ingresos</div><div class="kpi-val pos">$284k</div></div>
-                  <div class="kpi-card"><div class="kpi-label">Egresos</div><div class="kpi-val neg">$148k</div></div>
-                  <div class="kpi-card"><div class="kpi-label">Ganancia</div><div class="kpi-val">$135k</div></div>
-                </div>
-                <div class="chart-block">
-                  <div class="chart-lbl">Ingresos — últimos 6 meses</div>
-                  <div class="bars">
-                    <div class="bar" style="height:38%"></div>
-                    <div class="bar" style="height:52%"></div>
-                    <div class="bar" style="height:44%"></div>
-                    <div class="bar" style="height:61%"></div>
-                    <div class="bar" style="height:55%"></div>
-                    <div class="bar active" style="height:88%"></div>
+                <div class="mockup-main">
+                  <div class="mock-header">
+                    <span class="mock-title">Dashboard — Mayo 2026</span>
+                    <span class="mock-badge">Admin</span>
+                  </div>
+                  <div class="kpi-row">
+                    <div class="kpi-card">
+                      <div class="kpi-label">Ingresos</div>
+                      <div class="kpi-val pos">$284k</div>
+                      <div class="kpi-delta up">↑ 18%</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">Egresos</div>
+                      <div class="kpi-val neg">$148k</div>
+                      <div class="kpi-delta">↓ 3%</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">Ganancia</div>
+                      <div class="kpi-val">$136k</div>
+                      <div class="kpi-delta up">↑ 24%</div>
+                    </div>
+                  </div>
+                  <div class="chart-block">
+                    <div class="chart-lbl">Ingresos — últimos 6 meses</div>
+                    <svg class="chart-svg" viewBox="0 0 240 52" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#469A96" stop-opacity=".3"/>
+                          <stop offset="100%" stop-color="#469A96" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M0,44 C30,40 50,36 80,28 S130,16 160,14 S210,6 240,3" stroke="#469A96" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M0,44 C30,40 50,36 80,28 S130,16 160,14 S210,6 240,3 L240,52 L0,52Z" fill="url(#areaGrad)"/>
+                      <circle cx="240" cy="3" r="2.5" fill="#469A96"/>
+                      <circle cx="240" cy="3" r="5" fill="rgba(70,154,150,.2)"/>
+                    </svg>
                   </div>
                 </div>
-                <div class="alert-strip">⚠ Deudas pendientes del mes</div>
               </div>
             </div>
             <div class="mockup-mobile">
-              <div class="mobile-notch"></div>
+              <div class="mobile-pill"></div>
               <div class="mobile-screen">
-                <div class="mobile-lbl">Estado alumnas</div>
-                <div class="mobile-row"><span class="mobile-name">M. García</span><span class="mobile-tag tag-paid">Pagó</span></div>
-                <div class="mobile-row"><span class="mobile-name">S. Rodríguez</span><span class="mobile-tag tag-paid">Pagó</span></div>
-                <div class="mobile-row"><span class="mobile-name">L. Castro</span><span class="mobile-tag tag-due">Debe</span></div>
-                <div class="mobile-row"><span class="mobile-name">C. Méndez</span><span class="mobile-tag tag-paid">Pagó</span></div>
-                <div class="mobile-row"><span class="mobile-name">A. Fernández</span><span class="mobile-tag tag-due">Debe</span></div>
+                <div class="mobile-app-title">Cobros — Mayo</div>
+                <div class="mobile-card"><span class="mobile-name">M. García</span><span class="mobile-tag tag-paid">Pagó</span></div>
+                <div class="mobile-card"><span class="mobile-name">S. Rodríguez</span><span class="mobile-tag tag-paid">Pagó</span></div>
+                <div class="mobile-card"><span class="mobile-name">L. Castro</span><span class="mobile-tag tag-due">Debe</span></div>
+                <div class="mobile-card"><span class="mobile-name">C. Méndez</span><span class="mobile-tag tag-paid">Pagó</span></div>
+                <div class="mobile-total">
+                  <span class="mobile-total-lbl">Total cobrado</span>
+                  <span class="mobile-total-val">$18.600</span>
+                </div>
               </div>
             </div>
           </div>
@@ -369,8 +403,8 @@ footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;
     <div class="container">
       <div class="projects-header reveal">
         <div class="section-label">Proyectos</div>
-        <h2 class="section-h2">Sistemas reales<br>para negocios reales.</h2>
-        <p class="section-sub">Cada proyecto arranca de un problema concreto. Sin templates. Sin soluciones genéricas.</p>
+        <h2 class="section-h2">Negocios que dejaron<br>el papel atrás.</h2>
+        <p class="section-sub">Cada proyecto arranca de un problema concreto. Identificamos la necesidad, y proponemos una solución personalizada.</p>
       </div>
       <div class="projects-grid" id="projects-grid">
         {%- set proyectosDestacados = [] -%}
