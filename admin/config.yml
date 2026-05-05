@@ -2,6 +2,7 @@ backend:
   name: github
   repo: JimenaTheaux/decidata-portfolio
   branch: main
+  site_domain: decidata-portfolio.vercel.app
 
 media_folder: "images"
 public_folder: "/images"
