@@ -94,21 +94,34 @@ a{text-decoration:none;color:inherit}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
 /* NAV */
-#nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200);z-index:200;transition:box-shadow .3s}
-#nav.scrolled{box-shadow:0 1px 20px rgba(0,0,0,.06)}
+#nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:transparent;z-index:200;transition:background 300ms ease,backdrop-filter 300ms ease,box-shadow 300ms ease,border-bottom-color 300ms ease}
+#nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200);box-shadow:0 1px 20px rgba(0,0,0,.06)}
 .nav-inner{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:24px}
-.nav-logo{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.nav-logo{display:flex;align-items:center;flex-shrink:0}
+.logo-deci{font-family:var(--font-mono);font-size:18px;font-weight:700;color:var(--black);letter-spacing:-.02em}
+.logo-data{font-family:var(--font-mono);font-size:18px;font-weight:700;color:var(--accent);letter-spacing:-.02em}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-links a{font-size:13.5px;color:var(--gray-600);font-weight:400;transition:color .2s;white-space:nowrap}
-.nav-links a:hover{color:var(--black)}
-.nav-cta{font-size:13px;font-weight:500;color:var(--accent)!important;border:1px solid var(--accent);padding:8px 20px;border-radius:5px;transition:all .2s!important;white-space:nowrap;flex-shrink:0}
-.nav-cta:hover{background:var(--accent)!important;color:var(--white)!important}
-.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
-.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--black);border-radius:2px;transition:all .3s}
-.nav-mobile{display:none;flex-direction:column;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--white);border-bottom:1px solid var(--gray-200);padding:20px var(--px) 28px;gap:20px;z-index:199;transform:translateY(-10px);opacity:0;pointer-events:none;transition:all .3s}
-.nav-mobile.open{display:flex;transform:translateY(0);opacity:1;pointer-events:all}
-.nav-mobile a{font-size:16px;color:var(--gray-600);padding:4px 0;border-bottom:1px solid var(--gray-100)}
-.nav-mobile .nav-cta-mobile{font-size:15px;font-weight:500;color:var(--white)!important;background:var(--accent);text-align:center;padding:12px 20px;border-radius:6px;margin-top:4px;border:none}
+.nav-link{font-size:13.5px;color:var(--gray-600);font-weight:400;white-space:nowrap;position:relative;padding-bottom:3px;transition:color .2s}
+.nav-link:hover{color:var(--black)}
+.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 250ms ease}
+.nav-link.active{color:var(--black)}
+.nav-link.active::after{transform:scaleX(1)}
+.nav-cta{font-size:13px;font-weight:500;color:var(--accent);border:1.5px solid var(--accent);padding:8px 20px;border-radius:6px;transition:background .2s,color .2s;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{background:var(--accent);color:var(--white)}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:6px;background:none;border:none;width:36px;height:36px;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--black);border-radius:2px;transition:transform .3s ease,opacity .3s ease}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300}
+.nav-overlay.open{display:block}
+.nav-drawer{position:fixed;top:0;right:0;height:100vh;width:280px;background:var(--white);border-left:1px solid var(--gray-200);padding:80px 32px 32px;z-index:301;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-8px 0 32px rgba(0,0,0,.08)}
+.nav-drawer.open{transform:translateX(0)}
+.drawer-links{list-style:none;display:flex;flex-direction:column;flex:1}
+.drawer-link{font-size:1.5rem;font-weight:500;color:var(--black);min-height:48px;display:flex;align-items:center;border-bottom:1px solid var(--gray-100);transition:color .2s}
+.drawer-link:hover{color:var(--accent)}
+.drawer-cta{display:block;margin-top:24px;background:var(--accent);color:var(--white);font-size:14px;font-weight:500;text-align:center;padding:14px 20px;border-radius:7px;transition:background .2s}
+.drawer-cta:hover{background:var(--accent-dark)}
 
 /* HERO */
 #hero{padding-top:calc(var(--nav-h) + clamp(48px,8vw,96px));padding-bottom:clamp(48px,8vw,96px)}
@@ -301,7 +314,7 @@ footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .nav-links{display:none}.nav-toggle{display:flex}.nav-cta{display:none}
+  .nav-links{display:none}.hamburger{display:flex}.nav-cta{display:none}
   .hero-grid{grid-template-columns:1fr}.hero-right{margin-top:8px}
   .mockup-wrap{max-width:360px;margin:0 auto}
   .stats-inner{grid-template-columns:repeat(2,1fr)}
@@ -382,27 +395,31 @@ footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;
 
 <nav id="nav">
   <div class="container nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="/images/decidata_negro_png.png" alt="deciDATA" style="height:32px;width:auto;display:block;">
+    <a href="/" class="nav-logo" aria-label="deciDATA — inicio">
+      <span class="logo-deci">deci</span><span class="logo-data">DATA</span>
     </a>
     <ul class="nav-links">
-      <li><a href="/proyectos">Proyectos</a></li>
-      <li><a href="#acerca" class="nav-anchor">Sobre mí</a></li>
-      <li><a href="#valoraciones" class="nav-anchor">Valoraciones</a></li>
-      <li><a href="https://wa.me/{{ general.whatsapp }}" target="_blank" class="nav-cta">Hablemos →</a></li>
+      <li><a href="#proyectos" class="nav-link" data-section="proyectos">Proyectos</a></li>
+      <li><a href="#acerca" class="nav-link" data-section="acerca">Sobre mí</a></li>
+      <li><a href="#valoraciones" class="nav-link" data-section="valoraciones">Valoraciones</a></li>
+      <li><a href="#contacto" class="nav-link" data-section="contacto">Contacto</a></li>
     </ul>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+    <a href="https://wa.me/{{ general.whatsapp }}" target="_blank" class="nav-cta" rel="noopener">Hablemos →</a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<div class="nav-mobile" id="nav-mobile">
-  <a href="/proyectos" onclick="closeMenu()">Proyectos</a>
-  <a href="#acerca" class="nav-anchor" onclick="closeMenu()">Sobre mí</a>
-  <a href="#valoraciones" class="nav-anchor" onclick="closeMenu()">Valoraciones</a>
-  <a href="#contacto" class="nav-anchor" onclick="closeMenu()">Contacto</a>
-  <a href="https://wa.me/{{ general.whatsapp }}" target="_blank" class="nav-cta-mobile">Hablemos por WhatsApp →</a>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+  <ul class="drawer-links">
+    <li><a href="#proyectos" class="drawer-link" data-section="proyectos">Proyectos</a></li>
+    <li><a href="#acerca" class="drawer-link" data-section="acerca">Sobre mí</a></li>
+    <li><a href="#valoraciones" class="drawer-link" data-section="valoraciones">Valoraciones</a></li>
+    <li><a href="#contacto" class="drawer-link" data-section="contacto">Contacto</a></li>
+  </ul>
+  <a href="https://wa.me/{{ general.whatsapp }}" target="_blank" class="drawer-cta" rel="noopener">Hablemos por WhatsApp →</a>
 </div>
 
 <div id="main-content">
@@ -718,28 +735,72 @@ function showHome() {
   setTimeout(() => document.getElementById('proyectos').scrollIntoView({behavior:'smooth',block:'start'}), 60);
 }
 
+// Scroll → nav materialise
 window.addEventListener('scroll', () => {
-  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+// Active nav link via IntersectionObserver
+const navSectionObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const link = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`);
+    if (!link) return;
+    if (entry.isIntersecting) {
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+['proyectos','acerca','valoraciones','contacto'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) navSectionObs.observe(el);
 });
 
-const toggle = document.getElementById('nav-toggle');
-const mobileNav = document.getElementById('nav-mobile');
-toggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
-function closeMenu() { mobileNav.classList.remove('open'); }
+// Hamburger drawer
+const hamburger = document.getElementById('hamburger');
+const drawer    = document.getElementById('nav-drawer');
+const overlay   = document.getElementById('nav-overlay');
 
-document.querySelectorAll('.nav-anchor').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const id = a.getAttribute('href').replace('#','');
-    if (document.getElementById('project-detail').classList.contains('active')) {
-      document.getElementById('project-detail').classList.remove('active');
-      document.getElementById('main-content').style.display = '';
-    }
-    setTimeout(() => {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({behavior:'smooth',block:'start'});
-    }, 60);
-  });
+function openDrawer() {
+  hamburger.setAttribute('aria-expanded', 'true');
+  hamburger.classList.add('open');
+  drawer.classList.add('open');
+  overlay.classList.add('open');
+  drawer.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.classList.remove('open');
+  drawer.classList.remove('open');
+  overlay.classList.remove('open');
+  drawer.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', () => {
+  hamburger.getAttribute('aria-expanded') === 'true' ? closeDrawer() : openDrawer();
+});
+overlay.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+// Smooth scroll — nav links + drawer links
+function handleAnchorClick(e) {
+  const href = this.getAttribute('href');
+  if (!href.startsWith('#')) return;
+  e.preventDefault();
+  closeDrawer();
+  const id = href.slice(1);
+  if (document.getElementById('project-detail').classList.contains('active')) {
+    document.getElementById('project-detail').classList.remove('active');
+    document.getElementById('main-content').style.display = '';
+  }
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 60);
+}
+document.querySelectorAll('.nav-link, .drawer-link').forEach(a => {
+  a.addEventListener('click', handleAnchorClick);
 });
 
 const obs = new IntersectionObserver(entries => {
