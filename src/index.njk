@@ -355,18 +355,35 @@ a{text-decoration:none;color:inherit}
   .contacto__divisor::before,.contacto__divisor::after{width:60px;height:1px}
 }
 
-/* FAB WhatsApp */
-.fab-wa{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.4);z-index:500;transition:transform .2s,box-shadow .2s;opacity:0;animation:fabIn .5s .4s ease forwards;text-decoration:none}
-.fab-wa:hover{transform:scale(1.08);box-shadow:0 8px 28px rgba(37,211,102,.55)}
-.fab-wa svg{width:28px;height:28px;fill:#fff;flex-shrink:0}
-.fab-wa::after{content:'Hablemos';position:absolute;right:64px;top:50%;transform:translateY(-50%);background:var(--black);color:var(--white);font-size:12px;font-family:var(--font-main);font-weight:500;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:0 2px 8px rgba(0,0,0,.15)}
-.fab-wa:hover::after{opacity:1}
-@keyframes fabIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:600px){.fab-wa::after{display:none}}
+/* FLOAT WA */
+.float-wa{position:fixed;bottom:28px;right:28px;z-index:9000;display:flex;align-items:center;gap:10px;flex-direction:row-reverse;opacity:0;transform:translateY(20px);transition:opacity 400ms ease,transform 400ms ease}
+.float-wa.visible{opacity:1;transform:translateY(0)}
+.float-wa__btn{position:relative;width:56px;height:56px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,.4);transition:transform 200ms}
+.float-wa__btn:hover{transform:scale(1.08)}
+.float-wa__btn::before{content:'';position:absolute;width:100%;height:100%;border-radius:50%;border:2px solid #22c55e;animation:pulse-ring 2s ease-out infinite}
+@keyframes pulse-ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+.float-wa__tooltip{background:rgba(15,23,42,.9);color:#fff;font-size:.8rem;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;transform:translateX(4px);transition:opacity 200ms,transform 200ms;pointer-events:none}
+.float-wa:hover .float-wa__tooltip{opacity:1;transform:translateX(0)}
+@media(max-width:480px){.float-wa__btn{width:48px;height:48px}.float-wa__tooltip{display:none}}
 
 /* FOOTER */
-footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.footer-text{font-family:var(--font-mono);font-size:11px;color:var(--gray-400);letter-spacing:.06em}
+.footer{background:#060d19;border-top:1px solid rgba(255,255,255,.06)}
+.footer__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:var(--max-w);margin:0 auto;padding:64px var(--px) 40px}
+.footer__logo{display:inline-flex;font-family:var(--font-mono);font-size:1.3rem;font-weight:700;text-decoration:none}
+.footer__logo .logo-deci{color:#fff}
+.footer__logo .logo-data{color:var(--accent)}
+.footer__tagline{color:rgba(255,255,255,.35);font-size:.85rem;margin-top:12px;max-width:220px;line-height:1.6}
+.footer__linkedin{display:flex;align-items:center;gap:8px;margin-top:20px;color:rgba(255,255,255,.4);font-size:.85rem;text-decoration:none;transition:color 200ms}
+.footer__linkedin:hover{color:#fff}
+.footer__nav-titulo{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3);margin-bottom:16px}
+.footer__nav ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+.footer__nav a,.footer__contacto a:not(.footer__wa-btn){color:rgba(255,255,255,.55);text-decoration:none;font-size:.9rem;transition:color 200ms}
+.footer__nav a:hover,.footer__contacto a:not(.footer__wa-btn):hover{color:var(--accent)}
+.footer__contacto p{font-size:.9rem;color:rgba(255,255,255,.55);margin-bottom:8px}
+.footer__wa-btn{display:inline-block;margin-top:16px;font-size:.85rem;color:var(--accent);border:1px solid rgba(70,154,150,.3);padding:8px 16px;border-radius:6px;text-decoration:none;transition:background 200ms}
+.footer__wa-btn:hover{background:rgba(70,154,150,.1)}
+.footer__bottom{max-width:var(--max-w);margin:0 auto;padding:24px var(--px);border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.8rem;color:rgba(255,255,255,.25)}
+@media(max-width:768px){.footer__grid{grid-template-columns:1fr;gap:32px;padding:48px var(--px) 32px}}
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -378,8 +395,6 @@ footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;
 @media(max-width:600px){
   :root{--px:18px}
   .features-grid{grid-template-columns:1fr}
-  .cta-box{padding:36px 24px;border-radius:14px}
-  footer{flex-direction:column;align-items:flex-start}
 }
 
 /* ── HERO BI SCENE ── */
@@ -827,12 +842,39 @@ footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;
     </div>
   </section>
 
-  <footer>
-    <div class="nav-logo">
-      <img src="/images/decidata_negro_png.png" alt="deciDATA" style="height:24px;width:auto;display:block;">
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/" class="footer__logo" aria-label="deciDATA inicio">
+          <span class="logo-deci">deci</span><span class="logo-data">DATA</span>
+        </a>
+        <p class="footer__tagline">Datos que se convierten en decisiones.</p>
+        <a href="https://www.linkedin.com/in/jimena-theaux" target="_blank" rel="noopener" class="footer__linkedin" aria-label="LinkedIn de deciDATA">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <nav class="footer__nav" aria-label="Navegación del footer">
+        <h4 class="footer__nav-titulo">Secciones</h4>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#acerca">Sobre mí</a></li>
+          <li><a href="#valoraciones">Valoraciones</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="footer__contacto">
+        <h4 class="footer__nav-titulo">Contacto</h4>
+        <p>📱 <a href="https://wa.me/{{ general.whatsapp }}">{{ general.whatsapp_display }}</a></p>
+        <p>📍 Argentina · Trabajo remoto</p>
+        <a href="https://wa.me/{{ general.whatsapp }}" class="footer__wa-btn" target="_blank" rel="noopener">Escribir por WhatsApp →</a>
+      </div>
     </div>
-    <span class="footer-text">WhatsApp: {{ general.whatsapp_display }}</span>
-    <span class="footer-text">{{ general.footer_copy }}</span>
+    <div class="footer__bottom">
+      <span>© 2026 deciDATA — Jimena Theaux</span>
+      <span>Hecho con datos y mucho café ☕</span>
+    </div>
   </footer>
 
 </div>
@@ -1088,7 +1130,7 @@ document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
   if (!form) return;
   const submitBtn = document.getElementById('submitBtn');
   const mensaje = document.getElementById('formMensaje');
-  const FORMSPREE_URL = 'https://formspree.io/f/REEMPLAZAR_CON_TU_ID';
+  const FORMSPREE_URL = 'https://formspree.io/f/mpqbdvyz';
 
   function setLoading(on) {
     submitBtn.disabled = on;
@@ -1141,10 +1183,19 @@ document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
     }
   });
 })();
+
+// Float WA — delayed reveal
+setTimeout(() => {
+  const btn = document.getElementById('floatWa');
+  if (btn) btn.classList.add('visible');
+}, 2000);
 </script>
 
-<a href="https://wa.me/{{ general.whatsapp }}" target="_blank" class="fab-wa" aria-label="Hablemos por WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-</a>
+<div class="float-wa" id="floatWa">
+  <a href="https://wa.me/{{ general.whatsapp }}" target="_blank" rel="noopener" class="float-wa__btn" aria-label="Escribir por WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+  <span class="float-wa__tooltip" aria-hidden="true">Hablemos por WhatsApp</span>
+</div>
 </body>
 </html>
