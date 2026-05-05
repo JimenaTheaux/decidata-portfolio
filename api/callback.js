@@ -2,7 +2,7 @@ module.exports = async function handler(req, res) {
   const { code } = req.query;
 
   if (!code) {
-    return res.send(closeWith('error', { message: 'No code received' }));
+    return res.send(buildPage('error', { message: 'No code received' }));
   }
 
   try {
@@ -12,23 +12,42 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         client_id: process.env.OAUTH_CLIENT_ID,
         client_secret: process.env.OAUTH_CLIENT_SECRET,
-        code
-      })
+        code,
+      }),
     });
 
     const data = await response.json();
 
     if (data.error) {
-      return res.send(closeWith('error', { message: data.error_description || data.error }));
+      return res.send(buildPage('error', { message: data.error_description || data.error }));
     }
 
-    res.send(closeWith('success', { token: data.access_token, provider: 'github' }));
+    res.send(buildPage('success', { token: data.access_token, provider: 'github' }));
   } catch (err) {
-    res.send(closeWith('error', { message: err.message }));
+    res.send(buildPage('error', { message: err.message }));
   }
 };
 
-function closeWith(status, payload) {
-  const msg = JSON.stringify('authorization:github:' + status + ':' + JSON.stringify(payload));
-  return '<!doctype html><html><body><script>window.opener.postMessage(' + msg + ', \'*\');window.close();<\/script></body></html>';
+/**
+ * Decap CMS OAuth handshake (mirrors Netlify's api.netlify.com/auth/done):
+ * 1. Popup sends  "authorizing:github"  → parent
+ * 2. Parent sends "authorizing:github"  → popup  (acknowledgement)
+ * 3. Popup sends  "authorization:github:success:{token}" → parent
+ * 4. Popup closes
+ */
+function buildPage(status, payload) {
+  const msg = JSON.stringify(
+    'authorization:github:' + status + ':' + JSON.stringify(payload)
+  );
+  return `<!doctype html><html><body><script>
+(function () {
+  function cb(e) {
+    window.removeEventListener('message', cb, false);
+    e.source.postMessage(${msg}, e.origin);
+    window.close();
+  }
+  window.addEventListener('message', cb, false);
+  window.opener.postMessage('authorizing:github', '*');
+})();
+<\/script></body></html>`;
 }
