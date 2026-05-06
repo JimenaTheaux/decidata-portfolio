@@ -1,0 +1,17 @@
+{
+  "stat1_num": "10",
+  "stat1_suffix": "+",
+  "stat1_label": "Proyectos entregados",
+  "stat1_sublabel": "",
+  "stat2_display": "10–20",
+  "stat2_label": "Días de entrega",
+  "stat2_sublabel": "de diagnóstico a entrega",
+  "stat3_num": "15",
+  "stat3_prefix": "+",
+  "stat3_label": "Personas confiando",
+  "stat3_sublabel": "pymes e instituciones",
+  "stat4_num": "100",
+  "stat4_suffix": "%",
+  "stat4_label": "Soluciones personalizadas",
+  "stat4_sublabel": ""
+}

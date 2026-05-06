@@ -1,0 +1,16 @@
+{
+  "proceso_label": "Cómo trabajo",
+  "proceso_h2": "Un proceso claro de principio a fin.",
+  "paso1_icono": "🔍",
+  "paso1_titulo": "Diagnóstico",
+  "paso1_desc": "Una reunión para entender tu negocio, qué información manejás y qué necesitás resolver.",
+  "paso2_icono": "🗺️",
+  "paso2_titulo": "Propuesta",
+  "paso2_desc": "Te presento la solución diseñada específicamente para tu caso. Sin templates, sin relleno.",
+  "paso3_icono": "⚙️",
+  "paso3_titulo": "Desarrollo",
+  "paso3_desc": "Construyo el sistema con actualizaciones durante el proceso para que veas el avance.",
+  "paso4_icono": "🚀",
+  "paso4_titulo": "Entrega + Soporte",
+  "paso4_desc": "Te entrego el sistema funcionando y te acompaño en la implementación."
+}
