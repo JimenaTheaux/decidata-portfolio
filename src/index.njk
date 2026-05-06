@@ -630,9 +630,9 @@ section[id]{scroll-margin-top:80px}
   <section id="proyectos" class="proyectos">
     <div class="container">
       <div class="proyectos__header reveal">
-        <div class="section-label">Proyectos</div>
-        <h2 class="section-h2">Sistemas reales<br>para negocios reales.</h2>
-        <p class="section-subtitle">Cada proyecto arranca de un problema concreto. Sin templates.</p>
+        <div class="section-label">{{ general.proyectos_label }}</div>
+        <h2 class="section-h2">{{ general.proyectos_h2 }}</h2>
+        <p class="section-subtitle">{{ general.proyectos_sub }}</p>
       </div>
 
 
@@ -690,11 +690,11 @@ section[id]{scroll-margin-top:80px}
       {%- endfor -%}
       {%- set resenasOrdenadas = resenasProjects | sort(attribute="orden") -%}
       <div class="valoraciones__header reveal">
-        <div class="section-label">Valoraciones</div>
-        <h2>Lo que dicen los clientes.</h2>
+        <div class="section-label">{{ general.valoraciones_label }}</div>
+        <h2>{{ general.valoraciones_h2 }}</h2>
         <div class="valoraciones__rating">
           <span class="stars" aria-label="5 estrellas">★★★★★</span>
-          <span class="rating-text">{{ resenasOrdenadas | length }} proyectos · 5.0 promedio</span>
+          <span class="rating-text">{{ resenasOrdenadas | length }} proyectos · {{ general.valoraciones_rating }}</span>
         </div>
       </div>
       <div class="valoraciones__slider" id="reviewsSlider">
@@ -870,7 +870,7 @@ section[id]{scroll-margin-top:80px}
       <div class="footer__contacto">
         <h4 class="footer__nav-titulo">Contacto</h4>
         <p>📱 <a href="https://wa.me/{{ general.whatsapp }}">{{ general.whatsapp_display }}</a></p>
-        <p>📍 Argentina · Trabajo remoto</p>
+        <p>📍 {{ general.contacto_ubicacion }}</p>
         <a href="https://wa.me/{{ general.whatsapp }}" class="footer__wa-btn" target="_blank" rel="noopener">Escribir por WhatsApp →</a>
       </div>
     </div>

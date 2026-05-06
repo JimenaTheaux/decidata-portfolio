@@ -37,47 +37,401 @@ collections:
   - name: "configuracion"
     label: "Configuración del sitio"
     files:
-      - label: "Textos generales"
-        name: "general"
+
+      - label: "🌐 Identidad & Contacto"
+        name: "identidad"
         file: "src/_data/general.json"
         format: "json"
         fields:
-          # — Identidad
-          - { label: "Nombre", name: "nombre", widget: "string" }
-          - { label: "Rol", name: "rol", widget: "string" }
+          - { label: "Nombre completo", name: "nombre", widget: "string" }
+          - { label: "Rol / cargo", name: "rol", widget: "string" }
           - { label: "Foto de perfil", name: "foto_perfil", widget: "image", required: false }
-          - { label: "WhatsApp (con código país, sin +)", name: "whatsapp", widget: "string" }
-          - { label: "WhatsApp para mostrar", name: "whatsapp_display", widget: "string" }
+          - { label: "WhatsApp (con código país, sin +)", name: "whatsapp", widget: "string", hint: "Ej: 5493525529966" }
+          - { label: "WhatsApp para mostrar", name: "whatsapp_display", widget: "string", hint: "Ej: 3525-529966" }
           - { label: "URL de LinkedIn", name: "linkedin_url", widget: "string" }
+          # campos requeridos para preservar el JSON completo al guardar
+          - { label: "_hero_eyebrow", name: "hero_eyebrow", widget: "hidden" }
+          - { label: "_hero_linea1", name: "hero_linea1", widget: "hidden" }
+          - { label: "_hero_linea2", name: "hero_linea2", widget: "hidden" }
+          - { label: "_hero_parrafo", name: "hero_parrafo", widget: "hidden" }
+          - { label: "_hero_proof", name: "hero_proof", widget: "hidden" }
+          - { label: "_stat1_num", name: "stat1_num", widget: "hidden" }
+          - { label: "_stat1_suffix", name: "stat1_suffix", widget: "hidden" }
+          - { label: "_stat1_label", name: "stat1_label", widget: "hidden" }
+          - { label: "_stat1_sublabel", name: "stat1_sublabel", widget: "hidden" }
+          - { label: "_stat2_display", name: "stat2_display", widget: "hidden" }
+          - { label: "_stat2_label", name: "stat2_label", widget: "hidden" }
+          - { label: "_stat2_sublabel", name: "stat2_sublabel", widget: "hidden" }
+          - { label: "_stat3_num", name: "stat3_num", widget: "hidden" }
+          - { label: "_stat3_prefix", name: "stat3_prefix", widget: "hidden" }
+          - { label: "_stat3_label", name: "stat3_label", widget: "hidden" }
+          - { label: "_stat3_sublabel", name: "stat3_sublabel", widget: "hidden" }
+          - { label: "_stat4_num", name: "stat4_num", widget: "hidden" }
+          - { label: "_stat4_suffix", name: "stat4_suffix", widget: "hidden" }
+          - { label: "_stat4_label", name: "stat4_label", widget: "hidden" }
+          - { label: "_stat4_sublabel", name: "stat4_sublabel", widget: "hidden" }
+          - { label: "_proyectos_label", name: "proyectos_label", widget: "hidden" }
+          - { label: "_proyectos_h2", name: "proyectos_h2", widget: "hidden" }
+          - { label: "_proyectos_sub", name: "proyectos_sub", widget: "hidden" }
+          - { label: "_valoraciones_label", name: "valoraciones_label", widget: "hidden" }
+          - { label: "_valoraciones_h2", name: "valoraciones_h2", widget: "hidden" }
+          - { label: "_valoraciones_rating", name: "valoraciones_rating", widget: "hidden" }
+          - { label: "_acerca_label", name: "acerca_label", widget: "hidden" }
+          - { label: "_acerca_h2_p1", name: "acerca_h2_p1", widget: "hidden" }
+          - { label: "_acerca_h2_em", name: "acerca_h2_em", widget: "hidden" }
+          - { label: "_bio1", name: "bio1", widget: "hidden" }
+          - { label: "_bio2", name: "bio2", widget: "hidden" }
+          - { label: "_skill1", name: "skill1", widget: "hidden" }
+          - { label: "_skill2", name: "skill2", widget: "hidden" }
+          - { label: "_skill3", name: "skill3", widget: "hidden" }
+          - { label: "_skill4", name: "skill4", widget: "hidden" }
+          - { label: "_prop1_negrita", name: "prop1_negrita", widget: "hidden" }
+          - { label: "_prop1_texto", name: "prop1_texto", widget: "hidden" }
+          - { label: "_prop2_negrita", name: "prop2_negrita", widget: "hidden" }
+          - { label: "_prop2_texto", name: "prop2_texto", widget: "hidden" }
+          - { label: "_prop3_negrita", name: "prop3_negrita", widget: "hidden" }
+          - { label: "_prop3_texto", name: "prop3_texto", widget: "hidden" }
+          - { label: "_prop4_negrita", name: "prop4_negrita", widget: "hidden" }
+          - { label: "_prop4_texto", name: "prop4_texto", widget: "hidden" }
+          - { label: "_proceso_label", name: "proceso_label", widget: "hidden" }
+          - { label: "_proceso_h2", name: "proceso_h2", widget: "hidden" }
+          - { label: "_paso1_icono", name: "paso1_icono", widget: "hidden" }
+          - { label: "_paso1_titulo", name: "paso1_titulo", widget: "hidden" }
+          - { label: "_paso1_desc", name: "paso1_desc", widget: "hidden" }
+          - { label: "_paso2_icono", name: "paso2_icono", widget: "hidden" }
+          - { label: "_paso2_titulo", name: "paso2_titulo", widget: "hidden" }
+          - { label: "_paso2_desc", name: "paso2_desc", widget: "hidden" }
+          - { label: "_paso3_icono", name: "paso3_icono", widget: "hidden" }
+          - { label: "_paso3_titulo", name: "paso3_titulo", widget: "hidden" }
+          - { label: "_paso3_desc", name: "paso3_desc", widget: "hidden" }
+          - { label: "_paso4_icono", name: "paso4_icono", widget: "hidden" }
+          - { label: "_paso4_titulo", name: "paso4_titulo", widget: "hidden" }
+          - { label: "_paso4_desc", name: "paso4_desc", widget: "hidden" }
+          - { label: "_contacto_badge", name: "contacto_badge", widget: "hidden" }
+          - { label: "_contacto_h2", name: "contacto_h2", widget: "hidden" }
+          - { label: "_contacto_sub", name: "contacto_sub", widget: "hidden" }
+          - { label: "_contacto_respuesta", name: "contacto_respuesta", widget: "hidden" }
+          - { label: "_contacto_ubicacion", name: "contacto_ubicacion", widget: "hidden" }
+          - { label: "_footer_tagline", name: "footer_tagline", widget: "hidden" }
+          - { label: "_footer_copy", name: "footer_copy", widget: "hidden" }
+          - { label: "_footer_right", name: "footer_right", widget: "hidden" }
 
-          # — Hero
-          - { label: "Hero — eyebrow (etiqueta superior)", name: "hero_eyebrow", widget: "string" }
-          - { label: "Hero — línea 1", name: "hero_linea1", widget: "string" }
-          - { label: "Hero — línea 2 (acento)", name: "hero_linea2", widget: "string" }
-          - { label: "Hero — párrafo", name: "hero_parrafo", widget: "text" }
-          - { label: "Hero — prueba social (texto pequeño)", name: "hero_proof", widget: "string" }
+      - label: "🏠 Hero"
+        name: "hero"
+        file: "src/_data/general.json"
+        format: "json"
+        fields:
+          - { label: "Eyebrow (etiqueta superior)", name: "hero_eyebrow", widget: "string", hint: "Ej: Datos · Decisiones · Resultados" }
+          - { label: "Título — línea 1", name: "hero_linea1", widget: "string", hint: "Ej: Datos que se convierten en" }
+          - { label: "Título — línea 2 (resaltada)", name: "hero_linea2", widget: "string", hint: "Ej: decisiones." }
+          - { label: "Párrafo descriptivo", name: "hero_parrafo", widget: "text" }
+          - { label: "Prueba social (texto pequeño bajo los botones)", name: "hero_proof", widget: "string", hint: "Ej: ✓ +15 negocios · ✓ 100% personalizado" }
+          - { label: "_nombre", name: "nombre", widget: "hidden" }
+          - { label: "_rol", name: "rol", widget: "hidden" }
+          - { label: "_foto_perfil", name: "foto_perfil", widget: "hidden" }
+          - { label: "_whatsapp", name: "whatsapp", widget: "hidden" }
+          - { label: "_whatsapp_display", name: "whatsapp_display", widget: "hidden" }
+          - { label: "_linkedin_url", name: "linkedin_url", widget: "hidden" }
+          - { label: "_stat1_num", name: "stat1_num", widget: "hidden" }
+          - { label: "_stat1_suffix", name: "stat1_suffix", widget: "hidden" }
+          - { label: "_stat1_label", name: "stat1_label", widget: "hidden" }
+          - { label: "_stat1_sublabel", name: "stat1_sublabel", widget: "hidden" }
+          - { label: "_stat2_display", name: "stat2_display", widget: "hidden" }
+          - { label: "_stat2_label", name: "stat2_label", widget: "hidden" }
+          - { label: "_stat2_sublabel", name: "stat2_sublabel", widget: "hidden" }
+          - { label: "_stat3_num", name: "stat3_num", widget: "hidden" }
+          - { label: "_stat3_prefix", name: "stat3_prefix", widget: "hidden" }
+          - { label: "_stat3_label", name: "stat3_label", widget: "hidden" }
+          - { label: "_stat3_sublabel", name: "stat3_sublabel", widget: "hidden" }
+          - { label: "_stat4_num", name: "stat4_num", widget: "hidden" }
+          - { label: "_stat4_suffix", name: "stat4_suffix", widget: "hidden" }
+          - { label: "_stat4_label", name: "stat4_label", widget: "hidden" }
+          - { label: "_stat4_sublabel", name: "stat4_sublabel", widget: "hidden" }
+          - { label: "_proyectos_label", name: "proyectos_label", widget: "hidden" }
+          - { label: "_proyectos_h2", name: "proyectos_h2", widget: "hidden" }
+          - { label: "_proyectos_sub", name: "proyectos_sub", widget: "hidden" }
+          - { label: "_valoraciones_label", name: "valoraciones_label", widget: "hidden" }
+          - { label: "_valoraciones_h2", name: "valoraciones_h2", widget: "hidden" }
+          - { label: "_valoraciones_rating", name: "valoraciones_rating", widget: "hidden" }
+          - { label: "_acerca_label", name: "acerca_label", widget: "hidden" }
+          - { label: "_acerca_h2_p1", name: "acerca_h2_p1", widget: "hidden" }
+          - { label: "_acerca_h2_em", name: "acerca_h2_em", widget: "hidden" }
+          - { label: "_bio1", name: "bio1", widget: "hidden" }
+          - { label: "_bio2", name: "bio2", widget: "hidden" }
+          - { label: "_skill1", name: "skill1", widget: "hidden" }
+          - { label: "_skill2", name: "skill2", widget: "hidden" }
+          - { label: "_skill3", name: "skill3", widget: "hidden" }
+          - { label: "_skill4", name: "skill4", widget: "hidden" }
+          - { label: "_prop1_negrita", name: "prop1_negrita", widget: "hidden" }
+          - { label: "_prop1_texto", name: "prop1_texto", widget: "hidden" }
+          - { label: "_prop2_negrita", name: "prop2_negrita", widget: "hidden" }
+          - { label: "_prop2_texto", name: "prop2_texto", widget: "hidden" }
+          - { label: "_prop3_negrita", name: "prop3_negrita", widget: "hidden" }
+          - { label: "_prop3_texto", name: "prop3_texto", widget: "hidden" }
+          - { label: "_prop4_negrita", name: "prop4_negrita", widget: "hidden" }
+          - { label: "_prop4_texto", name: "prop4_texto", widget: "hidden" }
+          - { label: "_proceso_label", name: "proceso_label", widget: "hidden" }
+          - { label: "_proceso_h2", name: "proceso_h2", widget: "hidden" }
+          - { label: "_paso1_icono", name: "paso1_icono", widget: "hidden" }
+          - { label: "_paso1_titulo", name: "paso1_titulo", widget: "hidden" }
+          - { label: "_paso1_desc", name: "paso1_desc", widget: "hidden" }
+          - { label: "_paso2_icono", name: "paso2_icono", widget: "hidden" }
+          - { label: "_paso2_titulo", name: "paso2_titulo", widget: "hidden" }
+          - { label: "_paso2_desc", name: "paso2_desc", widget: "hidden" }
+          - { label: "_paso3_icono", name: "paso3_icono", widget: "hidden" }
+          - { label: "_paso3_titulo", name: "paso3_titulo", widget: "hidden" }
+          - { label: "_paso3_desc", name: "paso3_desc", widget: "hidden" }
+          - { label: "_paso4_icono", name: "paso4_icono", widget: "hidden" }
+          - { label: "_paso4_titulo", name: "paso4_titulo", widget: "hidden" }
+          - { label: "_paso4_desc", name: "paso4_desc", widget: "hidden" }
+          - { label: "_contacto_badge", name: "contacto_badge", widget: "hidden" }
+          - { label: "_contacto_h2", name: "contacto_h2", widget: "hidden" }
+          - { label: "_contacto_sub", name: "contacto_sub", widget: "hidden" }
+          - { label: "_contacto_respuesta", name: "contacto_respuesta", widget: "hidden" }
+          - { label: "_contacto_ubicacion", name: "contacto_ubicacion", widget: "hidden" }
+          - { label: "_footer_tagline", name: "footer_tagline", widget: "hidden" }
+          - { label: "_footer_copy", name: "footer_copy", widget: "hidden" }
+          - { label: "_footer_right", name: "footer_right", widget: "hidden" }
 
-          # — Stats
-          - { label: "Stat 1 — número (solo cifra)", name: "stat1_num", widget: "string" }
+      - label: "📊 Stats (números de impacto)"
+        name: "stats"
+        file: "src/_data/general.json"
+        format: "json"
+        fields:
+          - { label: "Stat 1 — número", name: "stat1_num", widget: "string", hint: "Solo la cifra, ej: 10" }
           - { label: "Stat 1 — sufijo", name: "stat1_suffix", widget: "string", required: false, hint: "Ej: +" }
           - { label: "Stat 1 — etiqueta", name: "stat1_label", widget: "string" }
           - { label: "Stat 1 — subetiqueta", name: "stat1_sublabel", widget: "string", required: false }
           - { label: "Stat 2 — texto (sin animación)", name: "stat2_display", widget: "string", hint: "Ej: 10–20" }
           - { label: "Stat 2 — etiqueta", name: "stat2_label", widget: "string" }
           - { label: "Stat 2 — subetiqueta", name: "stat2_sublabel", widget: "string", required: false }
-          - { label: "Stat 3 — número (solo cifra)", name: "stat3_num", widget: "string" }
+          - { label: "Stat 3 — número", name: "stat3_num", widget: "string", hint: "Solo la cifra, ej: 15" }
           - { label: "Stat 3 — prefijo", name: "stat3_prefix", widget: "string", required: false, hint: "Ej: +" }
           - { label: "Stat 3 — etiqueta", name: "stat3_label", widget: "string" }
           - { label: "Stat 3 — subetiqueta", name: "stat3_sublabel", widget: "string", required: false }
-          - { label: "Stat 4 — número (solo cifra)", name: "stat4_num", widget: "string" }
+          - { label: "Stat 4 — número", name: "stat4_num", widget: "string", hint: "Solo la cifra, ej: 100" }
           - { label: "Stat 4 — sufijo", name: "stat4_suffix", widget: "string", required: false, hint: "Ej: %" }
           - { label: "Stat 4 — etiqueta", name: "stat4_label", widget: "string" }
           - { label: "Stat 4 — subetiqueta", name: "stat4_sublabel", widget: "string", required: false }
+          - { label: "_nombre", name: "nombre", widget: "hidden" }
+          - { label: "_rol", name: "rol", widget: "hidden" }
+          - { label: "_foto_perfil", name: "foto_perfil", widget: "hidden" }
+          - { label: "_whatsapp", name: "whatsapp", widget: "hidden" }
+          - { label: "_whatsapp_display", name: "whatsapp_display", widget: "hidden" }
+          - { label: "_linkedin_url", name: "linkedin_url", widget: "hidden" }
+          - { label: "_hero_eyebrow", name: "hero_eyebrow", widget: "hidden" }
+          - { label: "_hero_linea1", name: "hero_linea1", widget: "hidden" }
+          - { label: "_hero_linea2", name: "hero_linea2", widget: "hidden" }
+          - { label: "_hero_parrafo", name: "hero_parrafo", widget: "hidden" }
+          - { label: "_hero_proof", name: "hero_proof", widget: "hidden" }
+          - { label: "_proyectos_label", name: "proyectos_label", widget: "hidden" }
+          - { label: "_proyectos_h2", name: "proyectos_h2", widget: "hidden" }
+          - { label: "_proyectos_sub", name: "proyectos_sub", widget: "hidden" }
+          - { label: "_valoraciones_label", name: "valoraciones_label", widget: "hidden" }
+          - { label: "_valoraciones_h2", name: "valoraciones_h2", widget: "hidden" }
+          - { label: "_valoraciones_rating", name: "valoraciones_rating", widget: "hidden" }
+          - { label: "_acerca_label", name: "acerca_label", widget: "hidden" }
+          - { label: "_acerca_h2_p1", name: "acerca_h2_p1", widget: "hidden" }
+          - { label: "_acerca_h2_em", name: "acerca_h2_em", widget: "hidden" }
+          - { label: "_bio1", name: "bio1", widget: "hidden" }
+          - { label: "_bio2", name: "bio2", widget: "hidden" }
+          - { label: "_skill1", name: "skill1", widget: "hidden" }
+          - { label: "_skill2", name: "skill2", widget: "hidden" }
+          - { label: "_skill3", name: "skill3", widget: "hidden" }
+          - { label: "_skill4", name: "skill4", widget: "hidden" }
+          - { label: "_prop1_negrita", name: "prop1_negrita", widget: "hidden" }
+          - { label: "_prop1_texto", name: "prop1_texto", widget: "hidden" }
+          - { label: "_prop2_negrita", name: "prop2_negrita", widget: "hidden" }
+          - { label: "_prop2_texto", name: "prop2_texto", widget: "hidden" }
+          - { label: "_prop3_negrita", name: "prop3_negrita", widget: "hidden" }
+          - { label: "_prop3_texto", name: "prop3_texto", widget: "hidden" }
+          - { label: "_prop4_negrita", name: "prop4_negrita", widget: "hidden" }
+          - { label: "_prop4_texto", name: "prop4_texto", widget: "hidden" }
+          - { label: "_proceso_label", name: "proceso_label", widget: "hidden" }
+          - { label: "_proceso_h2", name: "proceso_h2", widget: "hidden" }
+          - { label: "_paso1_icono", name: "paso1_icono", widget: "hidden" }
+          - { label: "_paso1_titulo", name: "paso1_titulo", widget: "hidden" }
+          - { label: "_paso1_desc", name: "paso1_desc", widget: "hidden" }
+          - { label: "_paso2_icono", name: "paso2_icono", widget: "hidden" }
+          - { label: "_paso2_titulo", name: "paso2_titulo", widget: "hidden" }
+          - { label: "_paso2_desc", name: "paso2_desc", widget: "hidden" }
+          - { label: "_paso3_icono", name: "paso3_icono", widget: "hidden" }
+          - { label: "_paso3_titulo", name: "paso3_titulo", widget: "hidden" }
+          - { label: "_paso3_desc", name: "paso3_desc", widget: "hidden" }
+          - { label: "_paso4_icono", name: "paso4_icono", widget: "hidden" }
+          - { label: "_paso4_titulo", name: "paso4_titulo", widget: "hidden" }
+          - { label: "_paso4_desc", name: "paso4_desc", widget: "hidden" }
+          - { label: "_contacto_badge", name: "contacto_badge", widget: "hidden" }
+          - { label: "_contacto_h2", name: "contacto_h2", widget: "hidden" }
+          - { label: "_contacto_sub", name: "contacto_sub", widget: "hidden" }
+          - { label: "_contacto_respuesta", name: "contacto_respuesta", widget: "hidden" }
+          - { label: "_contacto_ubicacion", name: "contacto_ubicacion", widget: "hidden" }
+          - { label: "_footer_tagline", name: "footer_tagline", widget: "hidden" }
+          - { label: "_footer_copy", name: "footer_copy", widget: "hidden" }
+          - { label: "_footer_right", name: "footer_right", widget: "hidden" }
 
-          # — Sobre mí
-          - { label: "Sobre mí — label", name: "acerca_label", widget: "string" }
-          - { label: "Sobre mí — título", name: "acerca_h2_p1", widget: "string" }
-          - { label: "Sobre mí — título (énfasis)", name: "acerca_h2_em", widget: "string" }
+      - label: "🗂️ Sección Proyectos (textos del encabezado)"
+        name: "seccion_proyectos"
+        file: "src/_data/general.json"
+        format: "json"
+        fields:
+          - { label: "Label de sección", name: "proyectos_label", widget: "string", hint: "Ej: Proyectos" }
+          - { label: "Título principal", name: "proyectos_h2", widget: "string", hint: "Ej: Sistemas reales para negocios reales." }
+          - { label: "Subtítulo", name: "proyectos_sub", widget: "string" }
+          - { label: "_nombre", name: "nombre", widget: "hidden" }
+          - { label: "_rol", name: "rol", widget: "hidden" }
+          - { label: "_foto_perfil", name: "foto_perfil", widget: "hidden" }
+          - { label: "_whatsapp", name: "whatsapp", widget: "hidden" }
+          - { label: "_whatsapp_display", name: "whatsapp_display", widget: "hidden" }
+          - { label: "_linkedin_url", name: "linkedin_url", widget: "hidden" }
+          - { label: "_hero_eyebrow", name: "hero_eyebrow", widget: "hidden" }
+          - { label: "_hero_linea1", name: "hero_linea1", widget: "hidden" }
+          - { label: "_hero_linea2", name: "hero_linea2", widget: "hidden" }
+          - { label: "_hero_parrafo", name: "hero_parrafo", widget: "hidden" }
+          - { label: "_hero_proof", name: "hero_proof", widget: "hidden" }
+          - { label: "_stat1_num", name: "stat1_num", widget: "hidden" }
+          - { label: "_stat1_suffix", name: "stat1_suffix", widget: "hidden" }
+          - { label: "_stat1_label", name: "stat1_label", widget: "hidden" }
+          - { label: "_stat1_sublabel", name: "stat1_sublabel", widget: "hidden" }
+          - { label: "_stat2_display", name: "stat2_display", widget: "hidden" }
+          - { label: "_stat2_label", name: "stat2_label", widget: "hidden" }
+          - { label: "_stat2_sublabel", name: "stat2_sublabel", widget: "hidden" }
+          - { label: "_stat3_num", name: "stat3_num", widget: "hidden" }
+          - { label: "_stat3_prefix", name: "stat3_prefix", widget: "hidden" }
+          - { label: "_stat3_label", name: "stat3_label", widget: "hidden" }
+          - { label: "_stat3_sublabel", name: "stat3_sublabel", widget: "hidden" }
+          - { label: "_stat4_num", name: "stat4_num", widget: "hidden" }
+          - { label: "_stat4_suffix", name: "stat4_suffix", widget: "hidden" }
+          - { label: "_stat4_label", name: "stat4_label", widget: "hidden" }
+          - { label: "_stat4_sublabel", name: "stat4_sublabel", widget: "hidden" }
+          - { label: "_valoraciones_label", name: "valoraciones_label", widget: "hidden" }
+          - { label: "_valoraciones_h2", name: "valoraciones_h2", widget: "hidden" }
+          - { label: "_valoraciones_rating", name: "valoraciones_rating", widget: "hidden" }
+          - { label: "_acerca_label", name: "acerca_label", widget: "hidden" }
+          - { label: "_acerca_h2_p1", name: "acerca_h2_p1", widget: "hidden" }
+          - { label: "_acerca_h2_em", name: "acerca_h2_em", widget: "hidden" }
+          - { label: "_bio1", name: "bio1", widget: "hidden" }
+          - { label: "_bio2", name: "bio2", widget: "hidden" }
+          - { label: "_skill1", name: "skill1", widget: "hidden" }
+          - { label: "_skill2", name: "skill2", widget: "hidden" }
+          - { label: "_skill3", name: "skill3", widget: "hidden" }
+          - { label: "_skill4", name: "skill4", widget: "hidden" }
+          - { label: "_prop1_negrita", name: "prop1_negrita", widget: "hidden" }
+          - { label: "_prop1_texto", name: "prop1_texto", widget: "hidden" }
+          - { label: "_prop2_negrita", name: "prop2_negrita", widget: "hidden" }
+          - { label: "_prop2_texto", name: "prop2_texto", widget: "hidden" }
+          - { label: "_prop3_negrita", name: "prop3_negrita", widget: "hidden" }
+          - { label: "_prop3_texto", name: "prop3_texto", widget: "hidden" }
+          - { label: "_prop4_negrita", name: "prop4_negrita", widget: "hidden" }
+          - { label: "_prop4_texto", name: "prop4_texto", widget: "hidden" }
+          - { label: "_proceso_label", name: "proceso_label", widget: "hidden" }
+          - { label: "_proceso_h2", name: "proceso_h2", widget: "hidden" }
+          - { label: "_paso1_icono", name: "paso1_icono", widget: "hidden" }
+          - { label: "_paso1_titulo", name: "paso1_titulo", widget: "hidden" }
+          - { label: "_paso1_desc", name: "paso1_desc", widget: "hidden" }
+          - { label: "_paso2_icono", name: "paso2_icono", widget: "hidden" }
+          - { label: "_paso2_titulo", name: "paso2_titulo", widget: "hidden" }
+          - { label: "_paso2_desc", name: "paso2_desc", widget: "hidden" }
+          - { label: "_paso3_icono", name: "paso3_icono", widget: "hidden" }
+          - { label: "_paso3_titulo", name: "paso3_titulo", widget: "hidden" }
+          - { label: "_paso3_desc", name: "paso3_desc", widget: "hidden" }
+          - { label: "_paso4_icono", name: "paso4_icono", widget: "hidden" }
+          - { label: "_paso4_titulo", name: "paso4_titulo", widget: "hidden" }
+          - { label: "_paso4_desc", name: "paso4_desc", widget: "hidden" }
+          - { label: "_contacto_badge", name: "contacto_badge", widget: "hidden" }
+          - { label: "_contacto_h2", name: "contacto_h2", widget: "hidden" }
+          - { label: "_contacto_sub", name: "contacto_sub", widget: "hidden" }
+          - { label: "_contacto_respuesta", name: "contacto_respuesta", widget: "hidden" }
+          - { label: "_contacto_ubicacion", name: "contacto_ubicacion", widget: "hidden" }
+          - { label: "_footer_tagline", name: "footer_tagline", widget: "hidden" }
+          - { label: "_footer_copy", name: "footer_copy", widget: "hidden" }
+          - { label: "_footer_right", name: "footer_right", widget: "hidden" }
+
+      - label: "⭐ Valoraciones (textos del encabezado)"
+        name: "seccion_valoraciones"
+        file: "src/_data/general.json"
+        format: "json"
+        fields:
+          - { label: "Label de sección", name: "valoraciones_label", widget: "string", hint: "Ej: Valoraciones" }
+          - { label: "Título principal", name: "valoraciones_h2", widget: "string", hint: "Ej: Lo que dicen los clientes." }
+          - { label: "Rating promedio", name: "valoraciones_rating", widget: "string", hint: "Ej: 5.0 promedio" }
+          - { label: "_nombre", name: "nombre", widget: "hidden" }
+          - { label: "_rol", name: "rol", widget: "hidden" }
+          - { label: "_foto_perfil", name: "foto_perfil", widget: "hidden" }
+          - { label: "_whatsapp", name: "whatsapp", widget: "hidden" }
+          - { label: "_whatsapp_display", name: "whatsapp_display", widget: "hidden" }
+          - { label: "_linkedin_url", name: "linkedin_url", widget: "hidden" }
+          - { label: "_hero_eyebrow", name: "hero_eyebrow", widget: "hidden" }
+          - { label: "_hero_linea1", name: "hero_linea1", widget: "hidden" }
+          - { label: "_hero_linea2", name: "hero_linea2", widget: "hidden" }
+          - { label: "_hero_parrafo", name: "hero_parrafo", widget: "hidden" }
+          - { label: "_hero_proof", name: "hero_proof", widget: "hidden" }
+          - { label: "_stat1_num", name: "stat1_num", widget: "hidden" }
+          - { label: "_stat1_suffix", name: "stat1_suffix", widget: "hidden" }
+          - { label: "_stat1_label", name: "stat1_label", widget: "hidden" }
+          - { label: "_stat1_sublabel", name: "stat1_sublabel", widget: "hidden" }
+          - { label: "_stat2_display", name: "stat2_display", widget: "hidden" }
+          - { label: "_stat2_label", name: "stat2_label", widget: "hidden" }
+          - { label: "_stat2_sublabel", name: "stat2_sublabel", widget: "hidden" }
+          - { label: "_stat3_num", name: "stat3_num", widget: "hidden" }
+          - { label: "_stat3_prefix", name: "stat3_prefix", widget: "hidden" }
+          - { label: "_stat3_label", name: "stat3_label", widget: "hidden" }
+          - { label: "_stat3_sublabel", name: "stat3_sublabel", widget: "hidden" }
+          - { label: "_stat4_num", name: "stat4_num", widget: "hidden" }
+          - { label: "_stat4_suffix", name: "stat4_suffix", widget: "hidden" }
+          - { label: "_stat4_label", name: "stat4_label", widget: "hidden" }
+          - { label: "_stat4_sublabel", name: "stat4_sublabel", widget: "hidden" }
+          - { label: "_proyectos_label", name: "proyectos_label", widget: "hidden" }
+          - { label: "_proyectos_h2", name: "proyectos_h2", widget: "hidden" }
+          - { label: "_proyectos_sub", name: "proyectos_sub", widget: "hidden" }
+          - { label: "_acerca_label", name: "acerca_label", widget: "hidden" }
+          - { label: "_acerca_h2_p1", name: "acerca_h2_p1", widget: "hidden" }
+          - { label: "_acerca_h2_em", name: "acerca_h2_em", widget: "hidden" }
+          - { label: "_bio1", name: "bio1", widget: "hidden" }
+          - { label: "_bio2", name: "bio2", widget: "hidden" }
+          - { label: "_skill1", name: "skill1", widget: "hidden" }
+          - { label: "_skill2", name: "skill2", widget: "hidden" }
+          - { label: "_skill3", name: "skill3", widget: "hidden" }
+          - { label: "_skill4", name: "skill4", widget: "hidden" }
+          - { label: "_prop1_negrita", name: "prop1_negrita", widget: "hidden" }
+          - { label: "_prop1_texto", name: "prop1_texto", widget: "hidden" }
+          - { label: "_prop2_negrita", name: "prop2_negrita", widget: "hidden" }
+          - { label: "_prop2_texto", name: "prop2_texto", widget: "hidden" }
+          - { label: "_prop3_negrita", name: "prop3_negrita", widget: "hidden" }
+          - { label: "_prop3_texto", name: "prop3_texto", widget: "hidden" }
+          - { label: "_prop4_negrita", name: "prop4_negrita", widget: "hidden" }
+          - { label: "_prop4_texto", name: "prop4_texto", widget: "hidden" }
+          - { label: "_proceso_label", name: "proceso_label", widget: "hidden" }
+          - { label: "_proceso_h2", name: "proceso_h2", widget: "hidden" }
+          - { label: "_paso1_icono", name: "paso1_icono", widget: "hidden" }
+          - { label: "_paso1_titulo", name: "paso1_titulo", widget: "hidden" }
+          - { label: "_paso1_desc", name: "paso1_desc", widget: "hidden" }
+          - { label: "_paso2_icono", name: "paso2_icono", widget: "hidden" }
+          - { label: "_paso2_titulo", name: "paso2_titulo", widget: "hidden" }
+          - { label: "_paso2_desc", name: "paso2_desc", widget: "hidden" }
+          - { label: "_paso3_icono", name: "paso3_icono", widget: "hidden" }
+          - { label: "_paso3_titulo", name: "paso3_titulo", widget: "hidden" }
+          - { label: "_paso3_desc", name: "paso3_desc", widget: "hidden" }
+          - { label: "_paso4_icono", name: "paso4_icono", widget: "hidden" }
+          - { label: "_paso4_titulo", name: "paso4_titulo", widget: "hidden" }
+          - { label: "_paso4_desc", name: "paso4_desc", widget: "hidden" }
+          - { label: "_contacto_badge", name: "contacto_badge", widget: "hidden" }
+          - { label: "_contacto_h2", name: "contacto_h2", widget: "hidden" }
+          - { label: "_contacto_sub", name: "contacto_sub", widget: "hidden" }
+          - { label: "_contacto_respuesta", name: "contacto_respuesta", widget: "hidden" }
+          - { label: "_contacto_ubicacion", name: "contacto_ubicacion", widget: "hidden" }
+          - { label: "_footer_tagline", name: "footer_tagline", widget: "hidden" }
+          - { label: "_footer_copy", name: "footer_copy", widget: "hidden" }
+          - { label: "_footer_right", name: "footer_right", widget: "hidden" }
+
+      - label: "👤 Sobre mí"
+        name: "acerca"
+        file: "src/_data/general.json"
+        format: "json"
+        fields:
+          - { label: "Label de sección", name: "acerca_label", widget: "string", hint: "Ej: Sobre deciDATA" }
+          - { label: "Título — parte 1", name: "acerca_h2_p1", widget: "string" }
+          - { label: "Título — énfasis (itálica)", name: "acerca_h2_em", widget: "string" }
           - { label: "Bio párrafo 1", name: "bio1", widget: "text" }
           - { label: "Bio párrafo 2", name: "bio2", widget: "text" }
           - { label: "Skill 1", name: "skill1", widget: "string" }
@@ -92,10 +446,68 @@ collections:
           - { label: "Propuesta 3 — texto", name: "prop3_texto", widget: "string" }
           - { label: "Propuesta 4 — negrita", name: "prop4_negrita", widget: "string" }
           - { label: "Propuesta 4 — texto", name: "prop4_texto", widget: "string" }
+          - { label: "_nombre", name: "nombre", widget: "hidden" }
+          - { label: "_rol", name: "rol", widget: "hidden" }
+          - { label: "_foto_perfil", name: "foto_perfil", widget: "hidden" }
+          - { label: "_whatsapp", name: "whatsapp", widget: "hidden" }
+          - { label: "_whatsapp_display", name: "whatsapp_display", widget: "hidden" }
+          - { label: "_linkedin_url", name: "linkedin_url", widget: "hidden" }
+          - { label: "_hero_eyebrow", name: "hero_eyebrow", widget: "hidden" }
+          - { label: "_hero_linea1", name: "hero_linea1", widget: "hidden" }
+          - { label: "_hero_linea2", name: "hero_linea2", widget: "hidden" }
+          - { label: "_hero_parrafo", name: "hero_parrafo", widget: "hidden" }
+          - { label: "_hero_proof", name: "hero_proof", widget: "hidden" }
+          - { label: "_stat1_num", name: "stat1_num", widget: "hidden" }
+          - { label: "_stat1_suffix", name: "stat1_suffix", widget: "hidden" }
+          - { label: "_stat1_label", name: "stat1_label", widget: "hidden" }
+          - { label: "_stat1_sublabel", name: "stat1_sublabel", widget: "hidden" }
+          - { label: "_stat2_display", name: "stat2_display", widget: "hidden" }
+          - { label: "_stat2_label", name: "stat2_label", widget: "hidden" }
+          - { label: "_stat2_sublabel", name: "stat2_sublabel", widget: "hidden" }
+          - { label: "_stat3_num", name: "stat3_num", widget: "hidden" }
+          - { label: "_stat3_prefix", name: "stat3_prefix", widget: "hidden" }
+          - { label: "_stat3_label", name: "stat3_label", widget: "hidden" }
+          - { label: "_stat3_sublabel", name: "stat3_sublabel", widget: "hidden" }
+          - { label: "_stat4_num", name: "stat4_num", widget: "hidden" }
+          - { label: "_stat4_suffix", name: "stat4_suffix", widget: "hidden" }
+          - { label: "_stat4_label", name: "stat4_label", widget: "hidden" }
+          - { label: "_stat4_sublabel", name: "stat4_sublabel", widget: "hidden" }
+          - { label: "_proyectos_label", name: "proyectos_label", widget: "hidden" }
+          - { label: "_proyectos_h2", name: "proyectos_h2", widget: "hidden" }
+          - { label: "_proyectos_sub", name: "proyectos_sub", widget: "hidden" }
+          - { label: "_valoraciones_label", name: "valoraciones_label", widget: "hidden" }
+          - { label: "_valoraciones_h2", name: "valoraciones_h2", widget: "hidden" }
+          - { label: "_valoraciones_rating", name: "valoraciones_rating", widget: "hidden" }
+          - { label: "_proceso_label", name: "proceso_label", widget: "hidden" }
+          - { label: "_proceso_h2", name: "proceso_h2", widget: "hidden" }
+          - { label: "_paso1_icono", name: "paso1_icono", widget: "hidden" }
+          - { label: "_paso1_titulo", name: "paso1_titulo", widget: "hidden" }
+          - { label: "_paso1_desc", name: "paso1_desc", widget: "hidden" }
+          - { label: "_paso2_icono", name: "paso2_icono", widget: "hidden" }
+          - { label: "_paso2_titulo", name: "paso2_titulo", widget: "hidden" }
+          - { label: "_paso2_desc", name: "paso2_desc", widget: "hidden" }
+          - { label: "_paso3_icono", name: "paso3_icono", widget: "hidden" }
+          - { label: "_paso3_titulo", name: "paso3_titulo", widget: "hidden" }
+          - { label: "_paso3_desc", name: "paso3_desc", widget: "hidden" }
+          - { label: "_paso4_icono", name: "paso4_icono", widget: "hidden" }
+          - { label: "_paso4_titulo", name: "paso4_titulo", widget: "hidden" }
+          - { label: "_paso4_desc", name: "paso4_desc", widget: "hidden" }
+          - { label: "_contacto_badge", name: "contacto_badge", widget: "hidden" }
+          - { label: "_contacto_h2", name: "contacto_h2", widget: "hidden" }
+          - { label: "_contacto_sub", name: "contacto_sub", widget: "hidden" }
+          - { label: "_contacto_respuesta", name: "contacto_respuesta", widget: "hidden" }
+          - { label: "_contacto_ubicacion", name: "contacto_ubicacion", widget: "hidden" }
+          - { label: "_footer_tagline", name: "footer_tagline", widget: "hidden" }
+          - { label: "_footer_copy", name: "footer_copy", widget: "hidden" }
+          - { label: "_footer_right", name: "footer_right", widget: "hidden" }
 
-          # — Cómo trabajo (Proceso)
-          - { label: "Proceso — label", name: "proceso_label", widget: "string" }
-          - { label: "Proceso — título", name: "proceso_h2", widget: "string" }
+      - label: "🔄 Cómo trabajo (proceso)"
+        name: "proceso"
+        file: "src/_data/general.json"
+        format: "json"
+        fields:
+          - { label: "Label de sección", name: "proceso_label", widget: "string", hint: "Ej: Cómo trabajo" }
+          - { label: "Título", name: "proceso_h2", widget: "string" }
           - { label: "Paso 1 — ícono (emoji)", name: "paso1_icono", widget: "string" }
           - { label: "Paso 1 — título", name: "paso1_titulo", widget: "string" }
           - { label: "Paso 1 — descripción", name: "paso1_desc", widget: "text" }
@@ -108,15 +520,214 @@ collections:
           - { label: "Paso 4 — ícono (emoji)", name: "paso4_icono", widget: "string" }
           - { label: "Paso 4 — título", name: "paso4_titulo", widget: "string" }
           - { label: "Paso 4 — descripción", name: "paso4_desc", widget: "text" }
+          - { label: "_nombre", name: "nombre", widget: "hidden" }
+          - { label: "_rol", name: "rol", widget: "hidden" }
+          - { label: "_foto_perfil", name: "foto_perfil", widget: "hidden" }
+          - { label: "_whatsapp", name: "whatsapp", widget: "hidden" }
+          - { label: "_whatsapp_display", name: "whatsapp_display", widget: "hidden" }
+          - { label: "_linkedin_url", name: "linkedin_url", widget: "hidden" }
+          - { label: "_hero_eyebrow", name: "hero_eyebrow", widget: "hidden" }
+          - { label: "_hero_linea1", name: "hero_linea1", widget: "hidden" }
+          - { label: "_hero_linea2", name: "hero_linea2", widget: "hidden" }
+          - { label: "_hero_parrafo", name: "hero_parrafo", widget: "hidden" }
+          - { label: "_hero_proof", name: "hero_proof", widget: "hidden" }
+          - { label: "_stat1_num", name: "stat1_num", widget: "hidden" }
+          - { label: "_stat1_suffix", name: "stat1_suffix", widget: "hidden" }
+          - { label: "_stat1_label", name: "stat1_label", widget: "hidden" }
+          - { label: "_stat1_sublabel", name: "stat1_sublabel", widget: "hidden" }
+          - { label: "_stat2_display", name: "stat2_display", widget: "hidden" }
+          - { label: "_stat2_label", name: "stat2_label", widget: "hidden" }
+          - { label: "_stat2_sublabel", name: "stat2_sublabel", widget: "hidden" }
+          - { label: "_stat3_num", name: "stat3_num", widget: "hidden" }
+          - { label: "_stat3_prefix", name: "stat3_prefix", widget: "hidden" }
+          - { label: "_stat3_label", name: "stat3_label", widget: "hidden" }
+          - { label: "_stat3_sublabel", name: "stat3_sublabel", widget: "hidden" }
+          - { label: "_stat4_num", name: "stat4_num", widget: "hidden" }
+          - { label: "_stat4_suffix", name: "stat4_suffix", widget: "hidden" }
+          - { label: "_stat4_label", name: "stat4_label", widget: "hidden" }
+          - { label: "_stat4_sublabel", name: "stat4_sublabel", widget: "hidden" }
+          - { label: "_proyectos_label", name: "proyectos_label", widget: "hidden" }
+          - { label: "_proyectos_h2", name: "proyectos_h2", widget: "hidden" }
+          - { label: "_proyectos_sub", name: "proyectos_sub", widget: "hidden" }
+          - { label: "_valoraciones_label", name: "valoraciones_label", widget: "hidden" }
+          - { label: "_valoraciones_h2", name: "valoraciones_h2", widget: "hidden" }
+          - { label: "_valoraciones_rating", name: "valoraciones_rating", widget: "hidden" }
+          - { label: "_acerca_label", name: "acerca_label", widget: "hidden" }
+          - { label: "_acerca_h2_p1", name: "acerca_h2_p1", widget: "hidden" }
+          - { label: "_acerca_h2_em", name: "acerca_h2_em", widget: "hidden" }
+          - { label: "_bio1", name: "bio1", widget: "hidden" }
+          - { label: "_bio2", name: "bio2", widget: "hidden" }
+          - { label: "_skill1", name: "skill1", widget: "hidden" }
+          - { label: "_skill2", name: "skill2", widget: "hidden" }
+          - { label: "_skill3", name: "skill3", widget: "hidden" }
+          - { label: "_skill4", name: "skill4", widget: "hidden" }
+          - { label: "_prop1_negrita", name: "prop1_negrita", widget: "hidden" }
+          - { label: "_prop1_texto", name: "prop1_texto", widget: "hidden" }
+          - { label: "_prop2_negrita", name: "prop2_negrita", widget: "hidden" }
+          - { label: "_prop2_texto", name: "prop2_texto", widget: "hidden" }
+          - { label: "_prop3_negrita", name: "prop3_negrita", widget: "hidden" }
+          - { label: "_prop3_texto", name: "prop3_texto", widget: "hidden" }
+          - { label: "_prop4_negrita", name: "prop4_negrita", widget: "hidden" }
+          - { label: "_prop4_texto", name: "prop4_texto", widget: "hidden" }
+          - { label: "_contacto_badge", name: "contacto_badge", widget: "hidden" }
+          - { label: "_contacto_h2", name: "contacto_h2", widget: "hidden" }
+          - { label: "_contacto_sub", name: "contacto_sub", widget: "hidden" }
+          - { label: "_contacto_respuesta", name: "contacto_respuesta", widget: "hidden" }
+          - { label: "_contacto_ubicacion", name: "contacto_ubicacion", widget: "hidden" }
+          - { label: "_footer_tagline", name: "footer_tagline", widget: "hidden" }
+          - { label: "_footer_copy", name: "footer_copy", widget: "hidden" }
+          - { label: "_footer_right", name: "footer_right", widget: "hidden" }
 
-          # — Contacto
-          - { label: "Contacto — badge", name: "contacto_badge", widget: "string" }
-          - { label: "Contacto — título", name: "contacto_h2", widget: "string" }
-          - { label: "Contacto — subtítulo", name: "contacto_sub", widget: "text" }
-          - { label: "Contacto — tiempo respuesta", name: "contacto_respuesta", widget: "string" }
-          - { label: "Contacto — ubicación", name: "contacto_ubicacion", widget: "string" }
+      - label: "📬 Contacto"
+        name: "contacto"
+        file: "src/_data/general.json"
+        format: "json"
+        fields:
+          - { label: "Badge (etiqueta amarilla)", name: "contacto_badge", widget: "string", hint: "Ej: ⚡ Diagnóstico inicial gratuito" }
+          - { label: "Título", name: "contacto_h2", widget: "string" }
+          - { label: "Subtítulo", name: "contacto_sub", widget: "text" }
+          - { label: "Tiempo de respuesta", name: "contacto_respuesta", widget: "string", hint: "Ej: Respondo en menos de 24hs" }
+          - { label: "Ubicación", name: "contacto_ubicacion", widget: "string", hint: "Ej: Argentina · Trabajo remoto" }
+          - { label: "_nombre", name: "nombre", widget: "hidden" }
+          - { label: "_rol", name: "rol", widget: "hidden" }
+          - { label: "_foto_perfil", name: "foto_perfil", widget: "hidden" }
+          - { label: "_whatsapp", name: "whatsapp", widget: "hidden" }
+          - { label: "_whatsapp_display", name: "whatsapp_display", widget: "hidden" }
+          - { label: "_linkedin_url", name: "linkedin_url", widget: "hidden" }
+          - { label: "_hero_eyebrow", name: "hero_eyebrow", widget: "hidden" }
+          - { label: "_hero_linea1", name: "hero_linea1", widget: "hidden" }
+          - { label: "_hero_linea2", name: "hero_linea2", widget: "hidden" }
+          - { label: "_hero_parrafo", name: "hero_parrafo", widget: "hidden" }
+          - { label: "_hero_proof", name: "hero_proof", widget: "hidden" }
+          - { label: "_stat1_num", name: "stat1_num", widget: "hidden" }
+          - { label: "_stat1_suffix", name: "stat1_suffix", widget: "hidden" }
+          - { label: "_stat1_label", name: "stat1_label", widget: "hidden" }
+          - { label: "_stat1_sublabel", name: "stat1_sublabel", widget: "hidden" }
+          - { label: "_stat2_display", name: "stat2_display", widget: "hidden" }
+          - { label: "_stat2_label", name: "stat2_label", widget: "hidden" }
+          - { label: "_stat2_sublabel", name: "stat2_sublabel", widget: "hidden" }
+          - { label: "_stat3_num", name: "stat3_num", widget: "hidden" }
+          - { label: "_stat3_prefix", name: "stat3_prefix", widget: "hidden" }
+          - { label: "_stat3_label", name: "stat3_label", widget: "hidden" }
+          - { label: "_stat3_sublabel", name: "stat3_sublabel", widget: "hidden" }
+          - { label: "_stat4_num", name: "stat4_num", widget: "hidden" }
+          - { label: "_stat4_suffix", name: "stat4_suffix", widget: "hidden" }
+          - { label: "_stat4_label", name: "stat4_label", widget: "hidden" }
+          - { label: "_stat4_sublabel", name: "stat4_sublabel", widget: "hidden" }
+          - { label: "_proyectos_label", name: "proyectos_label", widget: "hidden" }
+          - { label: "_proyectos_h2", name: "proyectos_h2", widget: "hidden" }
+          - { label: "_proyectos_sub", name: "proyectos_sub", widget: "hidden" }
+          - { label: "_valoraciones_label", name: "valoraciones_label", widget: "hidden" }
+          - { label: "_valoraciones_h2", name: "valoraciones_h2", widget: "hidden" }
+          - { label: "_valoraciones_rating", name: "valoraciones_rating", widget: "hidden" }
+          - { label: "_acerca_label", name: "acerca_label", widget: "hidden" }
+          - { label: "_acerca_h2_p1", name: "acerca_h2_p1", widget: "hidden" }
+          - { label: "_acerca_h2_em", name: "acerca_h2_em", widget: "hidden" }
+          - { label: "_bio1", name: "bio1", widget: "hidden" }
+          - { label: "_bio2", name: "bio2", widget: "hidden" }
+          - { label: "_skill1", name: "skill1", widget: "hidden" }
+          - { label: "_skill2", name: "skill2", widget: "hidden" }
+          - { label: "_skill3", name: "skill3", widget: "hidden" }
+          - { label: "_skill4", name: "skill4", widget: "hidden" }
+          - { label: "_prop1_negrita", name: "prop1_negrita", widget: "hidden" }
+          - { label: "_prop1_texto", name: "prop1_texto", widget: "hidden" }
+          - { label: "_prop2_negrita", name: "prop2_negrita", widget: "hidden" }
+          - { label: "_prop2_texto", name: "prop2_texto", widget: "hidden" }
+          - { label: "_prop3_negrita", name: "prop3_negrita", widget: "hidden" }
+          - { label: "_prop3_texto", name: "prop3_texto", widget: "hidden" }
+          - { label: "_prop4_negrita", name: "prop4_negrita", widget: "hidden" }
+          - { label: "_prop4_texto", name: "prop4_texto", widget: "hidden" }
+          - { label: "_proceso_label", name: "proceso_label", widget: "hidden" }
+          - { label: "_proceso_h2", name: "proceso_h2", widget: "hidden" }
+          - { label: "_paso1_icono", name: "paso1_icono", widget: "hidden" }
+          - { label: "_paso1_titulo", name: "paso1_titulo", widget: "hidden" }
+          - { label: "_paso1_desc", name: "paso1_desc", widget: "hidden" }
+          - { label: "_paso2_icono", name: "paso2_icono", widget: "hidden" }
+          - { label: "_paso2_titulo", name: "paso2_titulo", widget: "hidden" }
+          - { label: "_paso2_desc", name: "paso2_desc", widget: "hidden" }
+          - { label: "_paso3_icono", name: "paso3_icono", widget: "hidden" }
+          - { label: "_paso3_titulo", name: "paso3_titulo", widget: "hidden" }
+          - { label: "_paso3_desc", name: "paso3_desc", widget: "hidden" }
+          - { label: "_paso4_icono", name: "paso4_icono", widget: "hidden" }
+          - { label: "_paso4_titulo", name: "paso4_titulo", widget: "hidden" }
+          - { label: "_paso4_desc", name: "paso4_desc", widget: "hidden" }
+          - { label: "_footer_tagline", name: "footer_tagline", widget: "hidden" }
+          - { label: "_footer_copy", name: "footer_copy", widget: "hidden" }
+          - { label: "_footer_right", name: "footer_right", widget: "hidden" }
 
-          # — Footer
-          - { label: "Footer — tagline", name: "footer_tagline", widget: "string" }
-          - { label: "Footer — copyright", name: "footer_copy", widget: "string" }
-          - { label: "Footer — texto derecho", name: "footer_right", widget: "string" }
+      - label: "🔗 Footer"
+        name: "footer"
+        file: "src/_data/general.json"
+        format: "json"
+        fields:
+          - { label: "Tagline", name: "footer_tagline", widget: "string", hint: "Ej: Datos que se convierten en decisiones." }
+          - { label: "Copyright", name: "footer_copy", widget: "string", hint: "Ej: © 2026 deciDATA — Jimena Theaux" }
+          - { label: "Texto derecho", name: "footer_right", widget: "string", hint: "Ej: Hecho con datos y mucho café ☕" }
+          - { label: "_nombre", name: "nombre", widget: "hidden" }
+          - { label: "_rol", name: "rol", widget: "hidden" }
+          - { label: "_foto_perfil", name: "foto_perfil", widget: "hidden" }
+          - { label: "_whatsapp", name: "whatsapp", widget: "hidden" }
+          - { label: "_whatsapp_display", name: "whatsapp_display", widget: "hidden" }
+          - { label: "_linkedin_url", name: "linkedin_url", widget: "hidden" }
+          - { label: "_hero_eyebrow", name: "hero_eyebrow", widget: "hidden" }
+          - { label: "_hero_linea1", name: "hero_linea1", widget: "hidden" }
+          - { label: "_hero_linea2", name: "hero_linea2", widget: "hidden" }
+          - { label: "_hero_parrafo", name: "hero_parrafo", widget: "hidden" }
+          - { label: "_hero_proof", name: "hero_proof", widget: "hidden" }
+          - { label: "_stat1_num", name: "stat1_num", widget: "hidden" }
+          - { label: "_stat1_suffix", name: "stat1_suffix", widget: "hidden" }
+          - { label: "_stat1_label", name: "stat1_label", widget: "hidden" }
+          - { label: "_stat1_sublabel", name: "stat1_sublabel", widget: "hidden" }
+          - { label: "_stat2_display", name: "stat2_display", widget: "hidden" }
+          - { label: "_stat2_label", name: "stat2_label", widget: "hidden" }
+          - { label: "_stat2_sublabel", name: "stat2_sublabel", widget: "hidden" }
+          - { label: "_stat3_num", name: "stat3_num", widget: "hidden" }
+          - { label: "_stat3_prefix", name: "stat3_prefix", widget: "hidden" }
+          - { label: "_stat3_label", name: "stat3_label", widget: "hidden" }
+          - { label: "_stat3_sublabel", name: "stat3_sublabel", widget: "hidden" }
+          - { label: "_stat4_num", name: "stat4_num", widget: "hidden" }
+          - { label: "_stat4_suffix", name: "stat4_suffix", widget: "hidden" }
+          - { label: "_stat4_label", name: "stat4_label", widget: "hidden" }
+          - { label: "_stat4_sublabel", name: "stat4_sublabel", widget: "hidden" }
+          - { label: "_proyectos_label", name: "proyectos_label", widget: "hidden" }
+          - { label: "_proyectos_h2", name: "proyectos_h2", widget: "hidden" }
+          - { label: "_proyectos_sub", name: "proyectos_sub", widget: "hidden" }
+          - { label: "_valoraciones_label", name: "valoraciones_label", widget: "hidden" }
+          - { label: "_valoraciones_h2", name: "valoraciones_h2", widget: "hidden" }
+          - { label: "_valoraciones_rating", name: "valoraciones_rating", widget: "hidden" }
+          - { label: "_acerca_label", name: "acerca_label", widget: "hidden" }
+          - { label: "_acerca_h2_p1", name: "acerca_h2_p1", widget: "hidden" }
+          - { label: "_acerca_h2_em", name: "acerca_h2_em", widget: "hidden" }
+          - { label: "_bio1", name: "bio1", widget: "hidden" }
+          - { label: "_bio2", name: "bio2", widget: "hidden" }
+          - { label: "_skill1", name: "skill1", widget: "hidden" }
+          - { label: "_skill2", name: "skill2", widget: "hidden" }
+          - { label: "_skill3", name: "skill3", widget: "hidden" }
+          - { label: "_skill4", name: "skill4", widget: "hidden" }
+          - { label: "_prop1_negrita", name: "prop1_negrita", widget: "hidden" }
+          - { label: "_prop1_texto", name: "prop1_texto", widget: "hidden" }
+          - { label: "_prop2_negrita", name: "prop2_negrita", widget: "hidden" }
+          - { label: "_prop2_texto", name: "prop2_texto", widget: "hidden" }
+          - { label: "_prop3_negrita", name: "prop3_negrita", widget: "hidden" }
+          - { label: "_prop3_texto", name: "prop3_texto", widget: "hidden" }
+          - { label: "_prop4_negrita", name: "prop4_negrita", widget: "hidden" }
+          - { label: "_prop4_texto", name: "prop4_texto", widget: "hidden" }
+          - { label: "_proceso_label", name: "proceso_label", widget: "hidden" }
+          - { label: "_proceso_h2", name: "proceso_h2", widget: "hidden" }
+          - { label: "_paso1_icono", name: "paso1_icono", widget: "hidden" }
+          - { label: "_paso1_titulo", name: "paso1_titulo", widget: "hidden" }
+          - { label: "_paso1_desc", name: "paso1_desc", widget: "hidden" }
+          - { label: "_paso2_icono", name: "paso2_icono", widget: "hidden" }
+          - { label: "_paso2_titulo", name: "paso2_titulo", widget: "hidden" }
+          - { label: "_paso2_desc", name: "paso2_desc", widget: "hidden" }
+          - { label: "_paso3_icono", name: "paso3_icono", widget: "hidden" }
+          - { label: "_paso3_titulo", name: "paso3_titulo", widget: "hidden" }
+          - { label: "_paso3_desc", name: "paso3_desc", widget: "hidden" }
+          - { label: "_paso4_icono", name: "paso4_icono", widget: "hidden" }
+          - { label: "_paso4_titulo", name: "paso4_titulo", widget: "hidden" }
+          - { label: "_paso4_desc", name: "paso4_desc", widget: "hidden" }
+          - { label: "_contacto_badge", name: "contacto_badge", widget: "hidden" }
+          - { label: "_contacto_h2", name: "contacto_h2", widget: "hidden" }
+          - { label: "_contacto_sub", name: "contacto_sub", widget: "hidden" }
+          - { label: "_contacto_respuesta", name: "contacto_respuesta", widget: "hidden" }
+          - { label: "_contacto_ubicacion", name: "contacto_ubicacion", widget: "hidden" }

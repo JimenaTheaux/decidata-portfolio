@@ -61,6 +61,14 @@
   "paso4_titulo": "Entrega + Soporte",
   "paso4_desc": "Te entrego el sistema funcionando y te acompaño en la implementación.",
 
+  "proyectos_label": "Proyectos",
+  "proyectos_h2": "Sistemas reales para negocios reales.",
+  "proyectos_sub": "Cada proyecto arranca de un problema concreto. Sin templates.",
+
+  "valoraciones_label": "Valoraciones",
+  "valoraciones_h2": "Lo que dicen los clientes.",
+  "valoraciones_rating": "5.0 promedio",
+
   "contacto_badge": "⚡ Diagnóstico inicial gratuito",
   "contacto_h2": "Tu negocio merece un sistema que funcione.",
   "contacto_sub": "En una sola reunión identificamos tu necesidad y diseñamos la solución.",
