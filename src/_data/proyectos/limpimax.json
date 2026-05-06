@@ -1,28 +1,16 @@
 {
-  "problema": "El flujo de un pedido pasaba por WhatsApp, cuaderno, comunicación verbal con producción, factura y reparto. La misma información se escribía tres o cuatro veces. Los errores eran frecuentes y la trazabilidad del pedido era nula.",
-  "resultados": [
-    "Todo el flujo de pedidos centralizado en un sistema",
-    "La información se carga una sola vez, sin reescribir",
-    "Mejor comunicación y trazabilidad con los clientes"
-  ],
-  "mockup": "/images/2-3-.png",
-  "chips": [
-    "Pedidos",
-    "Roles",
-    "Factura",
-    "Reparto"
-  ],
-  "quoteAutor": "Miriam Cragnolini · Administradora, Limpimax",
-  "resena_rol": "Limpimax · Administradora",
-  "destacado": true,
-  "solucion": "App con roles diferenciados para admin y producción, más dashboard integrado.",
-  "orden": 3,
-  "logo": "",
-  "descripcion": "Del WhatsApp al sistema. Pedidos, producción y reparto trazados en un solo flujo.",
-  "resena_nombre": "Miriam Cragnolini",
   "titulo": "Limpimax",
   "tag": "Fabricación",
-  "resena_texto": "Dejamos de anotar lo mismo varias veces. Ahora cargamos la información una sola vez y todo el proceso fluye mucho mejor.",
+  "categoria": "pedidos",
+  "orden": 3,
+  "destacado": true,
+  "logo": "",
+  "mockup": "/images/2-3-.png",
+  "descripcion": "Del WhatsApp al sistema. Pedidos, producción y reparto trazados en un solo flujo.",
+  "problema": "El flujo de un pedido pasaba por WhatsApp, cuaderno, comunicación verbal con producción, factura y reparto. La misma información se escribía tres o cuatro veces. Los errores eran frecuentes y la trazabilidad del pedido era nula.",
+  "quote": "Transcribimos la información muchas veces y no terminamos de registrar todo.",
+  "quoteAutor": "Miriam Cragnolini · Administradora, Limpimax",
+  "solucion": "App con roles diferenciados para admin y producción, más dashboard integrado.",
   "funcionalidades": [
     "Dashboard de ventas y pedidos",
     "Registro de ventas",
@@ -31,5 +19,14 @@
     "Factura automática al cargar la venta",
     "Seguimiento: confirmado → en producción → listo → entregado"
   ],
-  "quote": "Transcribimos la información muchas veces y no terminamos de registrar todo."
+  "resultados": [
+    "Todo el flujo de pedidos centralizado en un sistema",
+    "La información se carga una sola vez, sin reescribir",
+    "Mejor comunicación y trazabilidad con los clientes"
+  ],
+  "chips": ["Pedidos", "Roles", "Factura", "Reparto"],
+  "resena_texto": "Dejamos de anotar lo mismo varias veces. Ahora cargamos la información una sola vez y todo el proceso fluye mucho mejor.",
+  "resena_nombre": "Miriam Cragnolini",
+  "resena_rol": "Limpimax · Administradora",
+  "resena_avatar": "MC"
 }

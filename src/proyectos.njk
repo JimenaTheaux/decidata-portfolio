@@ -7,30 +7,19 @@ layout: null
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO primario -->
 <title>Proyectos — deciDATA | Sistemas reales para pymes argentinas</title>
 <meta name="description" content="Casos de estudio reales: gimnasios, viveros, empresas de limpieza y más. Mirá cómo deciDATA transforma datos en decisiones para pymes argentinas.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://decidata-portfolio.vercel.app/proyectos/">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://decidata-portfolio.vercel.app/proyectos/">
 <meta property="og:title" content="Proyectos — deciDATA | Sistemas reales para pymes argentinas">
 <meta property="og:description" content="Casos de estudio reales: gimnasios, viveros, empresas de limpieza y más. Mirá cómo deciDATA transforma datos en decisiones para pymes argentinas.">
 <meta property="og:image" content="https://decidata-portfolio.vercel.app/images/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="deciDATA — Datos que se convierten en decisiones">
 <meta property="og:locale" content="es_AR">
 <meta property="og:site_name" content="deciDATA">
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Proyectos — deciDATA | Sistemas reales para pymes argentinas">
-<meta name="twitter:description" content="Casos de estudio reales: gimnasios, viveros, empresas de limpieza y más. Mirá cómo deciDATA transforma datos en decisiones para pymes argentinas.">
 <meta name="twitter:image" content="https://decidata-portfolio.vercel.app/images/og-image.png">
-<meta name="twitter:image:alt" content="deciDATA — Datos que se convierten en decisiones">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +36,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
   --nav-h:64px;--max-w:1140px;--px:clamp(20px,5vw,60px);
   --radius:10px;--radius-lg:16px;
 }
-body{font-family:var(--font-main);background:var(--white);color:var(--black);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-main);background:#0f172a;color:#e2e8f0;font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%;height:auto}
 a{text-decoration:none;color:inherit}
 .container{max-width:var(--max-w);margin:0 auto;padding:0 var(--px)}
@@ -55,113 +44,151 @@ a{text-decoration:none;color:inherit}
 .section-label::before{content:'';width:24px;height:1px;background:var(--accent);flex-shrink:0}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
+section[id]{scroll-margin-top:80px}
 
 /* NAV */
-#nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200);z-index:200;transition:box-shadow .3s}
-#nav.scrolled{box-shadow:0 1px 20px rgba(0,0,0,.06)}
+#nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:transparent;z-index:200;transition:background 300ms ease,backdrop-filter 300ms ease,box-shadow 300ms ease,border-bottom-color 300ms ease}
+#nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200);box-shadow:0 1px 20px rgba(0,0,0,.06)}
 .nav-inner{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:24px}
-.nav-logo{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.nav-logo{display:flex;align-items:center;flex-shrink:0}
+.logo-deci{font-family:var(--font-mono);font-size:18px;font-weight:700;color:var(--black);letter-spacing:-.02em}
+.logo-data{font-family:var(--font-mono);font-size:18px;font-weight:700;color:var(--accent);letter-spacing:-.02em}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-links a{font-size:13.5px;color:var(--gray-600);font-weight:400;transition:color .2s;white-space:nowrap}
-.nav-links a:hover{color:var(--black)}
-.nav-cta{font-size:13px;font-weight:500;color:var(--accent)!important;border:1px solid var(--accent);padding:8px 20px;border-radius:5px;transition:all .2s!important;white-space:nowrap;flex-shrink:0}
-.nav-cta:hover{background:var(--accent)!important;color:var(--white)!important}
-.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
-.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--black);border-radius:2px;transition:all .3s}
-.nav-mobile{display:none;flex-direction:column;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--white);border-bottom:1px solid var(--gray-200);padding:20px var(--px) 28px;gap:20px;z-index:199;transform:translateY(-10px);opacity:0;pointer-events:none;transition:all .3s}
-.nav-mobile.open{display:flex;transform:translateY(0);opacity:1;pointer-events:all}
-.nav-mobile a{font-size:16px;color:var(--gray-600);padding:4px 0;border-bottom:1px solid var(--gray-100)}
-.nav-mobile .nav-cta-mobile{font-size:15px;font-weight:500;color:var(--white)!important;background:var(--accent);text-align:center;padding:12px 20px;border-radius:6px;margin-top:4px;border:none}
+.nav-link{font-size:13.5px;color:var(--gray-600);font-weight:400;white-space:nowrap;position:relative;padding-bottom:3px;transition:color .2s}
+.nav-link:hover{color:var(--black)}
+.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 250ms ease}
+.nav-link.active-page{color:var(--black)}
+.nav-link.active-page::after{transform:scaleX(1)}
+.nav-cta{font-size:13px;font-weight:500;color:var(--accent);border:1.5px solid var(--accent);padding:8px 20px;border-radius:6px;transition:background .2s,color .2s;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{background:var(--accent);color:var(--white)}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:6px;background:none;border:none;width:36px;height:36px;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--black);border-radius:2px;transition:transform .3s ease,opacity .3s ease}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300}
+.nav-overlay.open{display:block}
+.nav-drawer{position:fixed;top:0;right:0;height:100vh;width:280px;background:var(--white);border-left:1px solid var(--gray-200);padding:80px 32px 32px;z-index:301;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-8px 0 32px rgba(0,0,0,.08)}
+.nav-drawer.open{transform:translateX(0)}
+.drawer-links{list-style:none;display:flex;flex-direction:column;flex:1}
+.drawer-link{font-size:1.5rem;font-weight:500;color:var(--black);min-height:48px;display:flex;align-items:center;border-bottom:1px solid var(--gray-100);transition:color .2s}
+.drawer-link:hover{color:var(--accent)}
+.drawer-cta{display:block;margin-top:24px;background:var(--accent);color:var(--white);font-size:14px;font-weight:500;text-align:center;padding:14px 20px;border-radius:7px;transition:background .2s}
+.drawer-cta:hover{background:var(--accent-dark)}
+#nav:not(.scrolled) .logo-deci{color:#fff}
+#nav:not(.scrolled) .logo-data{color:var(--accent)}
+#nav:not(.scrolled) .nav-link{color:rgba(255,255,255,.7)}
+#nav:not(.scrolled) .nav-link:hover{color:#fff}
+#nav:not(.scrolled) .nav-link.active-page{color:#fff}
+#nav:not(.scrolled) .nav-cta{color:var(--accent);border-color:rgba(70,154,150,.55)}
+#nav:not(.scrolled) .hamburger span{background:#fff}
 
 /* PAGE HEADER */
-#page-header{padding-top:calc(var(--nav-h) + clamp(48px,8vw,80px));padding-bottom:clamp(32px,5vw,56px)}
-.page-h1{font-size:clamp(30px,5vw,52px);font-weight:600;line-height:1.1;letter-spacing:-.03em;margin-bottom:12px}
-.page-sub{font-size:15px;color:var(--gray-600);font-weight:300;max-width:480px;line-height:1.7;margin-bottom:32px}
-
-/* FILTER BAR */
+#page-header{padding-top:calc(var(--nav-h) + clamp(56px,9vw,96px));padding-bottom:clamp(48px,7vw,72px);background:#0f172a;position:relative;overflow:hidden}
+#page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(70,154,150,.07),transparent);pointer-events:none}
+#page-header::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.page-header__inner{position:relative;z-index:1}
+.page-h1{font-size:clamp(32px,5.5vw,56px);font-weight:600;line-height:1.08;letter-spacing:-.03em;color:#fff;margin-bottom:12px}
+.page-sub{font-size:15px;color:rgba(255,255,255,.5);font-weight:300;max-width:500px;line-height:1.7;margin-bottom:32px}
 .filter-bar{display:flex;gap:8px;flex-wrap:wrap}
-.filter-btn{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:5px;border:1px solid var(--gray-200);background:var(--white);color:var(--gray-600);cursor:pointer;transition:all .2s;white-space:nowrap}
+.filter-btn{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:8px 18px;border-radius:999px;border:1.5px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.6);cursor:pointer;transition:all .2s;white-space:nowrap}
 .filter-btn:hover{border-color:var(--accent);color:var(--accent)}
-.filter-btn.active{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#0f172a;font-weight:700}
 
-/* PROJECTS */
-#proyectos-section{padding:clamp(40px,7vw,80px) 0 clamp(64px,10vw,120px)}
-.section-h2{font-size:clamp(26px,4vw,40px);font-weight:600;line-height:1.15;letter-spacing:-.025em;margin-bottom:14px}
-.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.project-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:border-color .25s,transform .25s,box-shadow .25s;display:flex;flex-direction:column;position:relative}
-.project-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 40px rgba(70,154,150,.1)}
-.card-img{aspect-ratio:16/10;background:var(--gray-100);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.card-img img.mockup-img{width:100%;height:100%;object-fit:cover}
-.card-img-placeholder{width:88%;height:82%;background:var(--white);border-radius:6px;border:1px solid var(--gray-200);padding:10px;display:flex;flex-direction:column;gap:6px}
-.card-client-logo{position:absolute;top:12px;left:12px;height:28px;width:auto;max-width:100px;object-fit:contain;border-radius:4px;z-index:2;background:rgba(255,255,255,.9);padding:3px 6px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
-.ci-header{display:flex;justify-content:space-between;align-items:center}
-.ci-title{font-family:var(--font-mono);font-size:7px;color:var(--black)}
-.ci-badge{font-family:var(--font-mono);font-size:6px;color:var(--gray-600);background:var(--gray-100);padding:2px 5px;border-radius:3px}
-.ci-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
-.ci-kpi{background:var(--gray-50);border-radius:3px;padding:5px;border:.5px solid var(--gray-200)}
-.ci-klbl{font-family:var(--font-mono);font-size:5.5px;color:var(--gray-600);margin-bottom:2px}
-.ci-kval{font-family:var(--font-mono);font-size:9px;color:var(--black)}
-.ci-bars{display:flex;align-items:flex-end;gap:3px;height:24px;flex:1}
-.ci-bar{flex:1;border-radius:2px 2px 0 0;background:var(--gray-200)}
-.card-body{padding:22px 22px 20px;display:flex;flex-direction:column;flex:1}
-.card-tag{font-family:var(--font-mono);font-size:10px;color:var(--gray-600);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
-.card-title{font-size:18px;font-weight:600;color:var(--black);letter-spacing:-.02em;margin-bottom:8px;line-height:1.3}
-.card-desc{font-size:13.5px;color:var(--gray-600);line-height:1.65;font-weight:300;margin-bottom:18px;flex:1}
-.card-kpis{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.card-kpi-chip{font-family:var(--font-mono);font-size:10px;color:var(--accent-dark);background:var(--accent-light);padding:4px 10px;border-radius:4px}
-.card-link{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--black);border-top:1px solid var(--gray-100);padding-top:16px;transition:color .2s}
+/* PROJECTS GRID */
+#proyectos-section{padding:clamp(48px,8vw,96px) 0;background:#0f172a}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.project-card{background:rgba(30,41,59,.6);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform 300ms,box-shadow 300ms,border-color 300ms;display:flex;flex-direction:column;position:relative}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(70,154,150,.12);border-color:rgba(70,154,150,.3)}
+.project-card.hidden{display:none}
+.card-img{aspect-ratio:16/9;background:rgba(255,255,255,.04);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.card-img img.mockup-img{width:100%;height:100%;object-fit:cover;display:block}
+.card-img::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0);transition:background 300ms;z-index:0}
+.project-card:hover .card-img::after{background:rgba(0,0,0,.5)}
+.card-overlay-cta{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;opacity:0;transition:opacity 300ms;z-index:1;pointer-events:none}
+.project-card:hover .card-overlay-cta{opacity:1}
+.card-img-placeholder{width:88%;height:82%;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(255,255,255,.08);padding:12px;display:flex;flex-direction:column;gap:6px}
+.ci-bars{display:flex;align-items:flex-end;gap:3px;height:28px;flex:1}
+.ci-bar{flex:1;border-radius:2px 2px 0 0;background:rgba(255,255,255,.15)}
+.badge-dest{position:absolute;top:12px;right:12px;font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#0f172a;padding:3px 10px;border-radius:4px;z-index:2;font-weight:700}
+.card-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.card-tag{font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.card-title{font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:8px;line-height:1.25}
+.card-desc{font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.65;font-weight:300;margin-bottom:16px;flex:1}
+.card-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.chip{font-family:var(--font-mono);font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.6)}
+.card-link{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:rgba(255,255,255,.4);border-top:1px solid rgba(255,255,255,.08);padding-top:14px;transition:color .2s}
 .card-link .arr{color:var(--accent);transition:transform .2s}
-.project-card:hover .card-link{color:var(--accent)}
+.project-card:hover .card-link{color:#fff}
 .project-card:hover .card-link .arr{transform:translateX(4px)}
-.badge-dest{position:absolute;top:12px;right:12px;font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:var(--white);padding:3px 10px;border-radius:4px;z-index:3}
 
 /* DETAIL */
-#project-detail{display:none;padding-top:calc(var(--nav-h) + 48px);padding-bottom:80px;min-height:100vh}
+#project-detail{display:none;padding-top:calc(var(--nav-h) + 48px);padding-bottom:80px;min-height:100vh;background:#0f172a}
 #project-detail.active{display:block}
-.detail-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-600);margin-bottom:40px;cursor:pointer;transition:color .2s;border:none;background:none;font-family:var(--font-main)}
-.detail-back:hover{color:var(--black)}
+.detail-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:40px;cursor:pointer;transition:color .2s;border:none;background:none;font-family:var(--font-main)}
+.detail-back:hover{color:#fff}
 .detail-header{max-width:680px;margin-bottom:48px}
 .detail-logo{height:48px;width:auto;max-width:180px;object-fit:contain;margin-bottom:20px;border-radius:6px}
-.detail-tag{font-family:var(--font-mono);font-size:11px;color:var(--gray-600);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
-.detail-title{font-size:clamp(28px,4vw,44px);font-weight:600;letter-spacing:-.03em;line-height:1.1;margin-bottom:20px}
-.detail-desc{font-size:16px;color:var(--gray-600);line-height:1.75;font-weight:300}
-.detail-mockup{width:100%;max-width:800px;border-radius:12px;border:1px solid var(--gray-200);margin-bottom:40px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
-.detail-quote{border-left:3px solid var(--accent);padding:20px 24px;background:var(--gray-50);border-radius:0 8px 8px 0;margin:36px 0}
-.detail-quote p{font-size:clamp(16px,2.5vw,20px);font-weight:300;font-style:italic;color:var(--black);line-height:1.6}
-.detail-quote cite{display:block;font-size:12px;font-family:var(--font-mono);color:var(--gray-600);margin-top:10px;font-style:normal}
-.detail-section-title{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-600);margin-bottom:20px;display:flex;align-items:center;gap:12px}
-.detail-section-title::after{content:'';flex:1;height:1px;background:var(--gray-200)}
-.detail-problem{font-size:15px;color:var(--black);line-height:1.8;max-width:640px;margin-bottom:40px;font-weight:300}
+.detail-tag{font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.detail-title{font-size:clamp(28px,4vw,44px);font-weight:600;letter-spacing:-.03em;line-height:1.1;margin-bottom:20px;color:#fff}
+.detail-desc{font-size:16px;color:rgba(255,255,255,.6);line-height:1.75;font-weight:300}
+.detail-mockup{width:100%;max-width:800px;border-radius:12px;border:1px solid rgba(255,255,255,.1);margin-bottom:40px;box-shadow:0 4px 32px rgba(0,0,0,.3)}
+.detail-quote{border-left:3px solid var(--accent);padding:20px 24px;background:rgba(70,154,150,.07);border-radius:0 8px 8px 0;margin:36px 0}
+.detail-quote p{font-size:clamp(16px,2.5vw,20px);font-weight:300;font-style:italic;color:#fff;line-height:1.6}
+.detail-quote cite{display:block;font-size:12px;font-family:var(--font-mono);color:rgba(255,255,255,.4);margin-top:10px;font-style:normal}
+.detail-section-title{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.detail-section-title::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.1)}
+.detail-problem{font-size:15px;color:rgba(255,255,255,.7);line-height:1.8;max-width:640px;margin-bottom:40px;font-weight:300}
 .features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:40px}
-.feature-chip{display:flex;align-items:center;gap:10px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:12px 14px;font-size:13.5px;color:var(--black)}
+.feature-chip{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 14px;font-size:13.5px;color:rgba(255,255,255,.8)}
 .feature-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
 .results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px}
-.result-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:22px 18px;border-top:3px solid var(--accent)}
-.result-text{font-size:14px;color:var(--black);line-height:1.6}
-.solution-tag{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);color:var(--accent-dark);font-family:var(--font-mono);font-size:11px;padding:8px 16px;border-radius:6px}
-
-/* FAB */
-.fab-wa{position:fixed;bottom:28px;right:28px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:190;transition:transform .2s,box-shadow .2s}
-.fab-wa:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,.5)}
-.fab-wa svg{width:26px;height:26px;fill:var(--white)}
+.result-card{background:rgba(30,41,59,.6);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:22px 18px;border-top:3px solid var(--accent)}
+.result-text{font-size:14px;color:rgba(255,255,255,.75);line-height:1.6}
+.solution-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(70,154,150,.15);color:var(--accent);font-family:var(--font-mono);font-size:11px;padding:8px 16px;border-radius:6px}
 
 /* FOOTER */
-footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.footer-text{font-family:var(--font-mono);font-size:11px;color:var(--gray-400);letter-spacing:.06em}
+.footer{background:#060d19;border-top:1px solid rgba(255,255,255,.06)}
+.footer__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:var(--max-w);margin:0 auto;padding:64px var(--px) 40px}
+.footer__logo{display:inline-flex;font-family:var(--font-mono);font-size:1.3rem;font-weight:700;text-decoration:none}
+.footer__logo .logo-deci{color:#fff}
+.footer__logo .logo-data{color:var(--accent)}
+.footer__tagline{color:rgba(255,255,255,.35);font-size:.85rem;margin-top:12px;max-width:220px;line-height:1.6}
+.footer__linkedin{display:flex;align-items:center;gap:8px;margin-top:20px;color:rgba(255,255,255,.4);font-size:.85rem;text-decoration:none;transition:color 200ms}
+.footer__linkedin:hover{color:#fff}
+.footer__nav-titulo{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3);margin-bottom:16px}
+.footer__nav ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+.footer__nav a,.footer__contacto a:not(.footer__wa-btn){color:rgba(255,255,255,.55);text-decoration:none;font-size:.9rem;transition:color 200ms}
+.footer__nav a:hover,.footer__contacto a:not(.footer__wa-btn):hover{color:var(--accent)}
+.footer__contacto p{font-size:.9rem;color:rgba(255,255,255,.55);margin-bottom:8px}
+.footer__wa-btn{display:inline-block;margin-top:16px;font-size:.85rem;color:var(--accent);border:1px solid rgba(70,154,150,.3);padding:8px 16px;border-radius:6px;text-decoration:none;transition:background 200ms}
+.footer__wa-btn:hover{background:rgba(70,154,150,.1)}
+.footer__bottom{max-width:var(--max-w);margin:0 auto;padding:24px var(--px);border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.8rem;color:rgba(255,255,255,.25)}
+
+/* FLOAT WA */
+.float-wa{position:fixed;bottom:28px;right:28px;z-index:9000;display:flex;align-items:center;gap:10px;flex-direction:row-reverse;opacity:0;transform:translateY(20px);transition:opacity 400ms ease,transform 400ms ease}
+.float-wa.visible{opacity:1;transform:translateY(0)}
+.float-wa__btn{position:relative;width:56px;height:56px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,.4);transition:transform 200ms}
+.float-wa__btn:hover{transform:scale(1.08)}
+.float-wa__btn::before{content:'';position:absolute;width:100%;height:100%;border-radius:50%;border:2px solid #22c55e;animation:pulse-ring 2s ease-out infinite}
+@keyframes pulse-ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+.float-wa__tooltip{background:rgba(15,23,42,.9);color:#fff;font-size:.8rem;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;transform:translateX(4px);transition:opacity 200ms,transform 200ms;pointer-events:none}
+.float-wa:hover .float-wa__tooltip{opacity:1;transform:translateX(0)}
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .nav-links{display:none}.nav-toggle{display:flex}.nav-cta{display:none}
+  .nav-links{display:none}.hamburger{display:flex}.nav-cta{display:none}
   .projects-grid{grid-template-columns:repeat(2,1fr)}
   .results-grid{grid-template-columns:1fr}
   .features-grid{grid-template-columns:1fr 1fr}
 }
+@media(max-width:768px){.footer__grid{grid-template-columns:1fr;gap:32px;padding:48px var(--px) 32px}}
 @media(max-width:600px){
   :root{--px:18px}
   .projects-grid{grid-template-columns:1fr}
   .features-grid{grid-template-columns:1fr}
-  footer{flex-direction:column;align-items:flex-start}
 }
+@media(max-width:480px){.float-wa__btn{width:48px;height:48px}.float-wa__tooltip{display:none}}
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -169,38 +196,43 @@ footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;
 
 <nav id="nav">
   <div class="container nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="/images/decidata_negro_png.png" alt="deciDATA" style="height:32px;width:auto;display:block;">
+    <a href="/" class="nav-logo" aria-label="deciDATA — inicio">
+      <span class="logo-deci">deci</span><span class="logo-data">DATA</span>
     </a>
     <ul class="nav-links">
-      <li><a href="/">← Inicio</a></li>
-      <li><a href="/#acerca">Sobre mí</a></li>
-      <li><a href="/#contacto">Contacto</a></li>
-      <li><a href="https://wa.me/{{ general.whatsapp }}" target="_blank" class="nav-cta">Hablemos →</a></li>
+      <li><a href="/" class="nav-link">← Inicio</a></li>
+      <li><a href="/proyectos/" class="nav-link active-page">Proyectos</a></li>
+      <li><a href="/#acerca" class="nav-link">Sobre mí</a></li>
+      <li><a href="/#contacto" class="nav-link">Contacto</a></li>
     </ul>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+    <a href="https://wa.me/{{ general.whatsapp }}" target="_blank" class="nav-cta" rel="noopener">Hablemos →</a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<div class="nav-mobile" id="nav-mobile">
-  <a href="/" onclick="closeMenu()">← Inicio</a>
-  <a href="/#acerca" onclick="closeMenu()">Sobre mí</a>
-  <a href="/#contacto" onclick="closeMenu()">Contacto</a>
-  <a href="https://wa.me/{{ general.whatsapp }}" target="_blank" class="nav-cta-mobile">Hablemos por WhatsApp →</a>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+  <ul class="drawer-links">
+    <li><a href="/" class="drawer-link">← Inicio</a></li>
+    <li><a href="/proyectos/" class="drawer-link">Proyectos</a></li>
+    <li><a href="/#acerca" class="drawer-link">Sobre mí</a></li>
+    <li><a href="/#contacto" class="drawer-link">Contacto</a></li>
+  </ul>
+  <a href="https://wa.me/{{ general.whatsapp }}" target="_blank" class="drawer-cta" rel="noopener">Hablemos por WhatsApp →</a>
 </div>
 
 <div id="main-content">
 
   <section id="page-header">
-    <div class="container">
+    <div class="container page-header__inner">
       <div class="reveal">
         <div class="section-label">Portfolio</div>
-        <h1 class="page-h1">Proyectos.</h1>
+        <h1 class="page-h1">Todos los proyectos.</h1>
         <p class="page-sub">Sistemas reales para negocios reales. Cada uno parte de un problema concreto, sin templates genéricos.</p>
       </div>
-      <div class="filter-bar" id="filter-bar">
+      <div class="filter-bar reveal" id="filter-bar">
         <button class="filter-btn active" data-filter="all">Todos</button>
       </div>
     </div>
@@ -210,33 +242,26 @@ footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;
     <div class="container">
       <div class="projects-grid" id="projects-grid">
         {%- for key, p in proyectos -%}
-        <div class="project-card reveal" data-key="{{ key }}" data-tag="{{ p.tag }}" onclick="openProject('{{ key }}')">
+        <div class="project-card reveal" data-key="{{ key }}" data-categoria="{{ p.categoria }}" onclick="openProject('{{ key }}')">
           {%- if p.destacado %}<div class="badge-dest">Destacado</div>{%- endif %}
           <div class="card-img">
             {%- if p.mockup %}
-            <img src="{{ p.mockup }}" alt="Sistema de gestión {{ p.titulo }} — deciDATA" class="mockup-img">
+            <img src="{{ p.mockup }}" alt="Sistema {{ p.titulo }} — deciDATA" class="mockup-img" loading="lazy">
             {%- else %}
             <div class="card-img-placeholder">
-              <div class="ci-header">
-                {%- if p.logo %}<img src="{{ p.logo }}" alt="{{ p.titulo }}" style="height:20px;width:auto;object-fit:contain;">{%- else %}<span class="ci-title">{{ p.titulo }}</span>{%- endif %}
-                <span class="ci-badge">Sistema</span>
-              </div>
-              <div class="ci-kpis">
-                {%- for chip in p.chips | slice(3) %}<div class="ci-kpi"><div class="ci-klbl">{{ chip }}</div><div class="ci-kval" style="color:var(--accent)">✓</div></div>{%- endfor %}
-              </div>
               <div class="ci-bars">
-                <div class="ci-bar" style="height:40%"></div><div class="ci-bar" style="height:55%"></div><div class="ci-bar" style="height:48%"></div><div class="ci-bar" style="height:62%"></div><div class="ci-bar" style="height:58%"></div><div class="ci-bar" style="height:85%;background:var(--accent)"></div>
+                <div class="ci-bar" style="height:35%"></div><div class="ci-bar" style="height:55%"></div><div class="ci-bar" style="height:45%"></div><div class="ci-bar" style="height:65%"></div><div class="ci-bar" style="height:52%"></div><div class="ci-bar" style="height:85%;background:var(--accent)"></div>
               </div>
             </div>
             {%- endif %}
-            {%- if p.logo and not p.mockup %}<img src="{{ p.logo }}" alt="{{ p.titulo }}" class="card-client-logo">{%- endif %}
+            <span class="card-overlay-cta">Ver caso completo →</span>
           </div>
           <div class="card-body">
             <div class="card-tag">{{ p.tag }}</div>
             <div class="card-title">{{ p.titulo }}</div>
             <div class="card-desc">{{ p.descripcion }}</div>
-            <div class="card-kpis">
-              {%- for chip in p.chips %}<span class="card-kpi-chip">{{ chip }}</span>{%- endfor %}
+            <div class="card-chips">
+              {%- for chip in p.chips %}<span class="chip">{{ chip }}</span>{%- endfor %}
             </div>
             <div class="card-link">Ver proyecto <span class="arr">→</span></div>
           </div>
@@ -255,38 +280,111 @@ footer{padding:32px var(--px);border-top:1px solid var(--gray-200);display:flex;
   </div>
 </div>
 
-<a href="https://wa.me/{{ general.whatsapp }}" target="_blank" class="fab-wa" title="Escribir por WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-</a>
-
-<footer>
-  <div class="nav-logo">
-    <img src="/images/decidata_negro_png.png" alt="deciDATA" style="height:24px;width:auto;display:block;">
+<footer class="footer">
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <a href="/" class="footer__logo" aria-label="deciDATA inicio">
+        <span class="logo-deci">deci</span><span class="logo-data">DATA</span>
+      </a>
+      <p class="footer__tagline">{{ general.footer_tagline }}</p>
+      <a href="{{ general.linkedin_url }}" target="_blank" rel="noopener" class="footer__linkedin" aria-label="LinkedIn de deciDATA">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+    <nav class="footer__nav" aria-label="Navegación del footer">
+      <h4 class="footer__nav-titulo">Secciones</h4>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/proyectos/">Proyectos</a></li>
+        <li><a href="/#acerca">Sobre mí</a></li>
+        <li><a href="/#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="footer__contacto">
+      <h4 class="footer__nav-titulo">Contacto</h4>
+      <p>📱 <a href="https://wa.me/{{ general.whatsapp }}">{{ general.whatsapp_display }}</a></p>
+      <p>📍 {{ general.contacto_ubicacion }}</p>
+      <a href="https://wa.me/{{ general.whatsapp }}" class="footer__wa-btn" target="_blank" rel="noopener">Escribir por WhatsApp →</a>
+    </div>
   </div>
-  <span class="footer-text">WhatsApp: {{ general.whatsapp_display }}</span>
-  <span class="footer-text">© 2026 deciDATA</span>
+  <div class="footer__bottom">
+    <span>{{ general.footer_copy }}</span>
+    <span>{{ general.footer_right }}</span>
+  </div>
 </footer>
+
+<div class="float-wa" id="floatWa">
+  <a href="https://wa.me/{{ general.whatsapp }}" target="_blank" rel="noopener" class="float-wa__btn" aria-label="Escribir por WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+  <span class="float-wa__tooltip" aria-hidden="true">Hablemos por WhatsApp</span>
+</div>
 
 <script>
 const PROYECTOS = {{ proyectos | dump | safe }};
 
+// Nav drawer
+(function() {
+  const hamburger = document.getElementById('hamburger');
+  const drawer    = document.getElementById('nav-drawer');
+  const overlay   = document.getElementById('nav-overlay');
+  function openDrawer() {
+    hamburger.setAttribute('aria-expanded','true');
+    hamburger.classList.add('open');
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    drawer.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function closeDrawer() {
+    hamburger.setAttribute('aria-expanded','false');
+    hamburger.classList.remove('open');
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    drawer.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  hamburger.addEventListener('click', () => hamburger.getAttribute('aria-expanded')==='true' ? closeDrawer() : openDrawer());
+  overlay.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeDrawer(); });
+})();
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+// Reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'), i*60); obs.unobserve(e.target); } });
+}, { threshold: .08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Float WA
+setTimeout(() => { const b = document.getElementById('floatWa'); if(b) b.classList.add('visible'); }, 2000);
+
+// Sort & filter
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('projects-grid');
   const cards = [...grid.querySelectorAll('.project-card')];
+
+  // Sort: destacado first, then by orden
   cards.sort((a, b) => {
     const pa = PROYECTOS[a.dataset.key], pb = PROYECTOS[b.dataset.key];
-    return ((pb.destacado ? 1 : 0) - (pa.destacado ? 1 : 0)) || ((pa.orden || 99) - (pb.orden || 99));
+    return ((pb.destacado ? 1 : 0) - (pa.destacado ? 1 : 0)) || ((pa.orden||99) - (pb.orden||99));
   });
   cards.forEach(c => grid.appendChild(c));
 
+  // Build filter buttons from unique categorias
   const filterBar = document.getElementById('filter-bar');
-  const tipos = new Set();
-  Object.values(PROYECTOS).forEach(p => tipos.add(p.tag.split(' · ')[0].trim()));
-  tipos.forEach(tipo => {
+  const categorias = new Set();
+  Object.values(PROYECTOS).forEach(p => { if(p.categoria) categorias.add(p.categoria); });
+  categorias.forEach(cat => {
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
-    btn.dataset.filter = tipo;
-    btn.textContent = tipo;
+    btn.dataset.filter = cat;
+    btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     filterBar.appendChild(btn);
   });
 
@@ -297,18 +395,19 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.classList.add('active');
     const f = btn.dataset.filter;
     grid.querySelectorAll('.project-card').forEach(card => {
-      card.style.display = (f === 'all' || card.dataset.tag.startsWith(f)) ? '' : 'none';
+      card.classList.toggle('hidden', f !== 'all' && card.dataset.categoria !== f);
     });
   });
 });
 
+// Project detail
 function openProject(key) {
   const p = PROYECTOS[key];
   if (!p) return;
-  const logoHTML = p.logo ? `<img src="${p.logo}" alt="Logo ${p.titulo}" class="detail-logo">` : '';
-  const mockupHTML = p.mockup ? `<img src="${p.mockup}" alt="Sistema de gestión ${p.titulo} — deciDATA" class="detail-mockup">` : '';
-  const featuresHTML = (p.funcionalidades || []).map(f => `<div class="feature-chip"><div class="feature-dot"></div>${f}</div>`).join('');
-  const resultsHTML = (p.resultados || []).map(r => `<div class="result-card"><div class="result-text">${r}</div></div>`).join('');
+  const logoHTML     = p.logo    ? `<img src="${p.logo}" alt="Logo ${p.titulo}" class="detail-logo">` : '';
+  const mockupHTML   = p.mockup  ? `<img src="${p.mockup}" alt="Sistema ${p.titulo} — deciDATA" class="detail-mockup">` : '';
+  const featuresHTML = (p.funcionalidades||[]).map(f => `<div class="feature-chip"><div class="feature-dot"></div>${f}</div>`).join('');
+  const resultsHTML  = (p.resultados||[]).map(r => `<div class="result-card"><div class="result-text">${r}</div></div>`).join('');
   document.getElementById('detail-content').innerHTML = `
     <div class="detail-header">
       ${logoHTML}
@@ -329,28 +428,14 @@ function openProject(key) {
   `;
   document.getElementById('main-content').style.display = 'none';
   document.getElementById('project-detail').classList.add('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function showGrid() {
   document.getElementById('project-detail').classList.remove('active');
   document.getElementById('main-content').style.display = '';
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-window.addEventListener('scroll', () => {
-  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
-});
-
-const toggle = document.getElementById('nav-toggle');
-const mobileNav = document.getElementById('nav-mobile');
-toggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
-function closeMenu() { mobileNav.classList.remove('open'); }
-
-const obs = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); obs.unobserve(e.target); } });
-}, {threshold: .08});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>

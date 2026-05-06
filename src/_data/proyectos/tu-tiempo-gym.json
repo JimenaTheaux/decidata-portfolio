@@ -1,28 +1,16 @@
 {
-  "problema": "La administradora tenía todos los registros en papel, ordenados en carpetas. Los pagos se anotaban a mano. Las deudas se acumulaban sin seguimiento. Las profesoras mandaban sus horas por WhatsApp. Para saber el estado real del gimnasio había que revisar varios cuadernos, sumar a mano y esperar a fin de mes.",
-  "resultados": [
-    "Toda la información centralizada en un solo lugar",
-    "Registro y seguimiento de pagos sin papel",
-    "Horas de profesoras calculadas sin planillas"
-  ],
-  "mockup": "/images/tutiempogym-1-.png",
-  "chips": [
-    "Dashboard",
-    "Pagos",
-    "WhatsApp",
-    "Deudas"
-  ],
-  "quoteAutor": "Mary Mendoza · Dueña, Tu Tiempo Gym",
-  "resena_rol": "Tu Tiempo Gym · Dueña",
-  "destacado": true,
-  "solucion": "App web con dashboard integrado. Roles diferenciados para admin y profesoras.",
-  "orden": 1,
-  "logo": "/images/icon-512.png",
-  "descripcion": "De las carpetas al dashboard. Pagos, alumnas, deudas y asistencia en un solo lugar.",
-  "resena_nombre": "Mary Mendoza",
   "titulo": "Tu Tiempo Gym",
   "tag": "Deportes",
-  "resena_texto": "Pasamos de tener todo en papel a tener control real del gimnasio. Hoy sabemos qué está pasando sin tener que revisar carpetas.",
+  "categoria": "gestión",
+  "orden": 1,
+  "destacado": true,
+  "logo": "/images/icon-512.png",
+  "mockup": "/images/tutiempogym-1-.png",
+  "descripcion": "De las carpetas al dashboard. Pagos, alumnas, deudas y asistencia en un solo lugar.",
+  "problema": "La administradora tenía todos los registros en papel, ordenados en carpetas. Los pagos se anotaban a mano. Las deudas se acumulaban sin seguimiento. Las profesoras mandaban sus horas por WhatsApp. Para saber el estado real del gimnasio había que revisar varios cuadernos, sumar a mano y esperar a fin de mes.",
+  "quote": "Si alguien me pregunta cuántas alumnas tengo hoy, no tengo idea.",
+  "quoteAutor": "Mary Mendoza · Dueña, Tu Tiempo Gym",
+  "solucion": "App web con dashboard integrado. Roles diferenciados para admin y profesoras.",
   "funcionalidades": [
     "Dashboard con KPIs del gimnasio",
     "Gestión de alumnas por grupo",
@@ -33,5 +21,14 @@
     "Asistencia de profesoras",
     "Registro de egresos"
   ],
-  "quote": "Si alguien me pregunta cuántas alumnas tengo hoy, no tengo idea."
+  "resultados": [
+    "Toda la información centralizada en un solo lugar",
+    "Registro y seguimiento de pagos sin papel",
+    "Horas de profesoras calculadas sin planillas"
+  ],
+  "chips": ["Dashboard", "Pagos", "WhatsApp", "Deudas"],
+  "resena_texto": "Pasamos de tener todo en papel a tener control real del gimnasio. Hoy sabemos qué está pasando sin tener que revisar carpetas.",
+  "resena_nombre": "Mary Mendoza",
+  "resena_rol": "Tu Tiempo Gym · Dueña",
+  "resena_avatar": "MM"
 }

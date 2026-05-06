@@ -21,6 +21,8 @@
   "resena_nombre": "Analía Carina",
   "titulo": "Escuela de futbol Talleres JM",
   "tag": "Deportes",
+  "categoria": "gestión",
+  "resena_avatar": "AC",
   "resena_texto": "Lo que más me cambió el día a día es ver quién me debe apenas abro la app. Antes tenía que revisar anotaciones, preguntar, cruzar datos. Ahora entro al dashboard y está todo ahí",
   "funcionalidades": [
     "Gestión de alumnos y asistencia",
