@@ -2,5 +2,13 @@
   "buildCommand": "npm run build",
   "outputDirectory": "_site",
   "installCommand": "npm install",
-  "framework": null
+  "framework": null,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.decidata.com.ar" }],
+      "destination": "https://decidata.com.ar/$1",
+      "permanent": true
+    }
+  ]
 }

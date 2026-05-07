@@ -2,7 +2,7 @@
 layout: null
 ---
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,37 +34,71 @@ layout: null
 <meta name="twitter:image" content="https://decidata.com.ar/images/og-image.png">
 <meta name="twitter:image:alt" content="deciDATA — Datos que se convierten en decisiones">
 
-<!-- JSON-LD Schema: LocalBusiness + Person -->
+<!-- JSON-LD Schema: Person + LocalBusiness + WebSite -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["LocalBusiness", "ProfessionalService"],
-      "@id": "https://decidata.com.ar/#business",
-      "name": "deciDATA",
+      "@type": "Person",
+      "@id": "https://decidata.com.ar/#persona",
+      "name": "Jimena Theaux",
+      "jobTitle": "Analista de datos y diseñadora de sistemas de gestión",
       "url": "https://decidata.com.ar",
-      "description": "Diseño dashboards y sistemas de datos personalizados para pymes y organizaciones. Diagnóstico gratis. Entrega en 10–20 días.",
-      "founder": {
-        "@type": "Person",
-        "name": "Jimena Theaux",
-        "jobTitle": "Fundadora",
-        "worksFor": { "@id": "https://decidata.com.ar/#business" }
-      },
+      "sameAs": ["https://www.linkedin.com/in/jimena-theaux"],
+      "worksFor": { "@id": "https://decidata.com.ar/#negocio" }
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://decidata.com.ar/#negocio",
+      "name": "deciDATA",
+      "description": "Diseño de dashboards y sistemas de gestión personalizados para pymes e instituciones. Diagnóstico gratuito. Entrega en 10 a 20 días.",
+      "url": "https://decidata.com.ar",
+      "logo": "https://decidata.com.ar/images/og-image.png",
+      "founder": { "@id": "https://decidata.com.ar/#persona" },
       "areaServed": { "@type": "Country", "name": "Argentina" },
       "contactPoint": {
         "@type": "ContactPoint",
-        "contactType": "sales",
-        "telephone": "+5493525529966",
+        "contactType": "customer service",
+        "telephone": "+54-9-3525-529966",
+        "contactOption": "TollFree",
         "availableLanguage": "Spanish"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
         "reviewCount": "3",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+        "bestRating": "5"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Mary Mendoza" },
+          "reviewBody": "Pasamos de tener todo en papel a tener control real del gimnasio.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Agustina Zaya" },
+          "reviewBody": "El trabajo del día a día es mucho más simple.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Miriam Cragnolini" },
+          "reviewBody": "Ahora cargamos la información una sola vez y todo el proceso fluye mucho mejor.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://decidata.com.ar/#website",
+      "url": "https://decidata.com.ar",
+      "name": "deciDATA",
+      "description": "Sistemas de gestión para pymes — Argentina",
+      "publisher": { "@id": "https://decidata.com.ar/#negocio" },
+      "inLanguage": "es-AR"
     }
   ]
 }
@@ -72,6 +106,9 @@ layout: null
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://wa.me">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0f172a">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -227,6 +264,7 @@ section[id]{scroll-margin-top:80px}
 .chip--pagos,.chip--ventas{background:rgba(34,197,94,.15);color:#86efac}
 .chip--stock,.chip--egresos,.chip--alertas{background:rgba(234,179,8,.15);color:#fde047}
 .chip--pedidos,.chip--roles,.chip--factura,.chip--reparto{background:rgba(168,85,247,.15);color:#d8b4fe}
+.project-seo-text{font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.5;margin-top:8px;font-style:italic}
 @media(max-width:768px){.proyectos__grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.proyectos__grid{grid-template-columns:1fr}}
 
@@ -671,6 +709,7 @@ section[id]{scroll-margin-top:80px}
             <div class="card-chips">
               {%- for chip in p.chips %}<span class="chip chip--{{ chip | lower | replace(' ', '-') }}">{{ chip }}</span>{%- endfor %}
             </div>
+            {%- if p.seo_text %}<p class="project-seo-text">{{ p.seo_text }}</p>{%- endif %}
           </div>
         </div>
         {%- endfor %}
