@@ -206,11 +206,12 @@ section[id]{scroll-margin-top:80px}
 .proyecto-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(70,154,150,.12);border-color:rgba(70,154,150,.3)}
 .proyecto-card.oculta{opacity:0;scale:.95;pointer-events:none}
 .card-imagen{position:relative;overflow:hidden}
-.card-imagen img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
-.card-imagen::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0);transition:background 300ms;z-index:0}
+.card-imagen img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:transform 400ms ease}
+.card-imagen::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0);transition:background 300ms ease;z-index:1}
 .proyecto-card:hover .card-imagen::after{background:rgba(0,0,0,.55)}
-.card-overlay-cta{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 300ms;z-index:1}
+.card-overlay-cta{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 300ms ease;z-index:2}
 .proyecto-card:hover .card-overlay-cta{opacity:1}
+.proyecto-card:hover .card-imagen img{transform:scale(1.04)}
 .card-imagen-placeholder{aspect-ratio:16/9;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center}
 .card-imagen-placeholder span{font-family:var(--font-mono);font-size:12px;color:rgba(255,255,255,.3)}
 .card-contenido{padding:20px}
